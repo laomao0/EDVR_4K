@@ -1,0 +1,4 @@
+OrderedDict([('pretrain_model_G', '/mnt/lustre/shanghai/cmic/home/xyz18/experiments/train_EDVR_L_Preload_30000_nobug_ssim_11_LR_1e_5_suzhou_remove_baddata/models/latest_G.pth'), ('save_path', '/mnt/lustre/shanghai/cmic/home/xyz18/'), ('strict_load', True), ('resume_state', None)])
+GPU  1
+Evaluate Folders:  10852508
+Init pad right/bottom 0 / 0

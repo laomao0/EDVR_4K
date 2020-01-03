@@ -1,0 +1,90 @@
+cudnn(28):ERROR:105: Unable to locate a modulefile for 'cudnn/7.0.4'
+19-12-29 18:52:26.017 - INFO:   name: 001_EDVRwoTSA_scratch_lr4e-4_600k_REDS_LrCAR4S_debug_test_by_wshen
+  use_tb_logger: True
+  model: video_base
+  distortion: sr
+  scale: 4
+  gpu_ids: [0, 1]
+  datasets:[
+    train:[
+      name: REDS
+      mode: REDS
+      interval_list: [1]
+      random_reverse: False
+      border_mode: False
+      dataroot_GT: /lustre/home/acct-eezy/eezy/4khdr/codes/HeJing_4K_SuperResolution-master/sample_ai4k/train_sharp_wval.lmdb
+      dataroot_LQ: /lustre/home/acct-eezy/eezy/4khdr/codes/HeJing_4K_SuperResolution-master/sample_ai4k/train_sharp_bicubic_wval.lmdb
+      cache_keys: None
+      N_frames: 5
+      use_shuffle: True
+      n_workers: 3
+      batch_size: 32
+      GT_size: 256
+      LQ_size: 64
+      use_flip: True
+      use_rot: True
+      color: RGB
+      phase: train
+      scale: 4
+      data_type: lmdb
+    ]
+  ]
+  network_G:[
+    which_model_G: EDVR
+    nf: 64
+    nframes: 5
+    groups: 8
+    front_RBs: 5
+    back_RBs: 10
+    predeblur: False
+    HR_in: False
+    w_TSA: False
+    scale: 4
+  ]
+  path:[
+    pretrain_model_G: None
+    strict_load: True
+    resume_state: None
+    save_path: /lustre/home/acct-eezy/eezy/4khdr/codes/experiments
+    root: /lustre/home/acct-eezy/eezy/4khdr/codes/experiments
+    experiments_root: /lustre/home/acct-eezy/eezy/4khdr/codes/experiments/experiments/001_EDVRwoTSA_scratch_lr4e-4_600k_REDS_LrCAR4S_debug_test_by_wshen
+    models: /lustre/home/acct-eezy/eezy/4khdr/codes/experiments/experiments/001_EDVRwoTSA_scratch_lr4e-4_600k_REDS_LrCAR4S_debug_test_by_wshen/models
+    training_state: /lustre/home/acct-eezy/eezy/4khdr/codes/experiments/experiments/001_EDVRwoTSA_scratch_lr4e-4_600k_REDS_LrCAR4S_debug_test_by_wshen/training_state
+    log: /lustre/home/acct-eezy/eezy/4khdr/codes/experiments/experiments/001_EDVRwoTSA_scratch_lr4e-4_600k_REDS_LrCAR4S_debug_test_by_wshen
+    val_log: /lustre/home/acct-eezy/eezy/4khdr/codes/experiments/experiments/001_EDVRwoTSA_scratch_lr4e-4_600k_REDS_LrCAR4S_debug_test_by_wshen/val
+    val_images: /lustre/home/acct-eezy/eezy/4khdr/codes/experiments/experiments/001_EDVRwoTSA_scratch_lr4e-4_600k_REDS_LrCAR4S_debug_test_by_wshen/val_images
+    train_images: /lustre/home/acct-eezy/eezy/4khdr/codes/experiments/experiments/001_EDVRwoTSA_scratch_lr4e-4_600k_REDS_LrCAR4S_debug_test_by_wshen/train_images
+  ]
+  train:[
+    lr_G: 0.0004
+    lr_scheme: CosineAnnealingLR_Restart
+    beta1: 0.9
+    beta2: 0.99
+    niter: 600000
+    warmup_iter: -1
+    T_period: [150000, 150000, 150000, 150000]
+    restarts: [150000, 300000, 450000]
+    restart_weights: [1, 1, 1]
+    eta_min: 1e-07
+    pixel_criterion: cb
+    pixel_weight: 1.0
+    val_freq: 1
+    manual_seed: 0
+  ]
+  logger:[
+    print_freq: 1
+    save_checkpoint_freq: 1
+  ]
+  is_train: True
+  dist: False
+
+19-12-29 18:52:26.019 - INFO: Random seed: 0
+19-12-29 18:52:26.026 - INFO: Temporal augmentation interval list: [1], with random reverse is False.
+19-12-29 18:52:26.027 - INFO: Using lmdb meta info for cache keys.
+19-12-29 18:52:26.027 - INFO: Dataset [REDSDataset - REDS] is created.
+Traceback (most recent call last):
+  File "/lustre/home/acct-eezy/eezy/4khdr/codes/EDVR/train.py", line 772, in <module>
+    main()
+  File "/lustre/home/acct-eezy/eezy/4khdr/codes/EDVR/train.py", line 183, in main
+    total_epochs = int(opt['train']['epoch'])
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'

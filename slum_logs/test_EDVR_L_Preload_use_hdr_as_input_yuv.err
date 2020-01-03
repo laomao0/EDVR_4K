@@ -1,0 +1,254 @@
+cudnn(28):ERROR:105: Unable to locate a modulefile for 'cudnn/7.0.4'
+19-12-30 14:49:59.556 - INFO: Data: sharp_bicubic - /lustre/home/acct-eezy/eezy/4khdr/codes/HeJing_4K_SuperResolution-master/val_data/lr
+19-12-30 14:49:59.557 - INFO: Padding mode: new_info
+19-12-30 14:49:59.558 - INFO: Model path: /lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_cos/models/best_G.pth
+19-12-30 14:49:59.558 - INFO: Save images: True
+19-12-30 14:49:59.558 - INFO: Flip test: False
+19-12-30 14:50:10.340 - INFO:   1 - 00000                     	PSNR: 29.205765 dB
+19-12-30 14:50:15.022 - INFO:   2 - 00001                     	PSNR: 29.629991 dB
+19-12-30 14:50:19.695 - INFO:   3 - 00002                     	PSNR: 30.219838 dB
+19-12-30 14:50:24.377 - INFO:   4 - 00003                     	PSNR: 29.923874 dB
+19-12-30 14:50:29.057 - INFO:   5 - 00004                     	PSNR: 30.098934 dB
+19-12-30 14:50:33.729 - INFO:   6 - 00005                     	PSNR: 29.581392 dB
+19-12-30 14:50:38.406 - INFO:   7 - 00006                     	PSNR: 30.095584 dB
+19-12-30 14:50:43.076 - INFO:   8 - 00007                     	PSNR: 29.700476 dB
+19-12-30 14:50:47.742 - INFO:   9 - 00008                     	PSNR: 29.476890 dB
+19-12-30 14:50:52.425 - INFO:  10 - 00009                     	PSNR: 29.303455 dB
+19-12-30 14:50:52.426 - INFO: Folder 10547315 - Average PSNR: 29.723620 dB for 10 frames; Center PSNR: 29.936683 dB for 6 frames; Border PSNR: 29.404025 dB for 4 frames.
+19-12-30 14:50:59.200 - INFO:   1 - 00000                     	PSNR: 33.724401 dB
+19-12-30 14:51:03.836 - INFO:   2 - 00001                     	PSNR: 33.839988 dB
+19-12-30 14:51:08.458 - INFO:   3 - 00002                     	PSNR: 33.973659 dB
+19-12-30 14:51:13.083 - INFO:   4 - 00003                     	PSNR: 34.077106 dB
+19-12-30 14:51:17.710 - INFO:   5 - 00004                     	PSNR: 34.069088 dB
+19-12-30 14:51:22.332 - INFO:   6 - 00005                     	PSNR: 34.101503 dB
+19-12-30 14:51:26.948 - INFO:   7 - 00006                     	PSNR: 34.420285 dB
+19-12-30 14:51:31.571 - INFO:   8 - 00007                     	PSNR: 33.577762 dB
+19-12-30 14:51:36.193 - INFO:   9 - 00008                     	PSNR: 34.045546 dB
+19-12-30 14:51:40.811 - INFO:  10 - 00009                     	PSNR: 34.261627 dB
+19-12-30 14:51:40.811 - INFO: Folder 15099945 - Average PSNR: 34.009096 dB for 10 frames; Center PSNR: 34.036567 dB for 6 frames; Border PSNR: 33.967890 dB for 4 frames.
+19-12-30 14:51:48.186 - INFO:   1 - 00000                     	PSNR: 26.770554 dB
+19-12-30 14:51:52.880 - INFO:   2 - 00001                     	PSNR: 30.621718 dB
+19-12-30 14:51:57.604 - INFO:   3 - 00002                     	PSNR: 30.239748 dB
+19-12-30 14:52:02.320 - INFO:   4 - 00003                     	PSNR: 31.345353 dB
+19-12-30 14:52:07.021 - INFO:   5 - 00004                     	PSNR: 32.308187 dB
+19-12-30 14:52:11.735 - INFO:   6 - 00005                     	PSNR: 31.284844 dB
+19-12-30 14:52:16.439 - INFO:   7 - 00006                     	PSNR: 30.363405 dB
+19-12-30 14:52:21.145 - INFO:   8 - 00007                     	PSNR: 30.374123 dB
+19-12-30 14:52:25.846 - INFO:   9 - 00008                     	PSNR: 30.994573 dB
+19-12-30 14:52:30.551 - INFO:  10 - 00009                     	PSNR: 30.829276 dB
+19-12-30 14:52:30.556 - INFO: Folder 23887359 - Average PSNR: 30.513178 dB for 10 frames; Center PSNR: 30.985943 dB for 6 frames; Border PSNR: 29.804030 dB for 4 frames.
+19-12-30 14:52:37.703 - INFO:   1 - 00000                     	PSNR: 32.286162 dB
+19-12-30 14:52:42.350 - INFO:   2 - 00001                     	PSNR: 32.236875 dB
+19-12-30 14:52:46.998 - INFO:   3 - 00002                     	PSNR: 32.679016 dB
+19-12-30 14:52:51.661 - INFO:   4 - 00003                     	PSNR: 32.800796 dB
+19-12-30 14:52:56.310 - INFO:   5 - 00004                     	PSNR: 31.986551 dB
+19-12-30 14:53:00.954 - INFO:   6 - 00005                     	PSNR: 30.936714 dB
+19-12-30 14:53:05.604 - INFO:   7 - 00006                     	PSNR: 30.686506 dB
+19-12-30 14:53:10.261 - INFO:   8 - 00007                     	PSNR: 28.898989 dB
+19-12-30 14:53:14.946 - INFO:   9 - 00008                     	PSNR: 29.427004 dB
+19-12-30 14:53:19.634 - INFO:  10 - 00009                     	PSNR: 28.842147 dB
+19-12-30 14:53:19.635 - INFO: Folder 27823417 - Average PSNR: 31.078076 dB for 10 frames; Center PSNR: 31.331429 dB for 6 frames; Border PSNR: 30.698047 dB for 4 frames.
+19-12-30 14:53:27.409 - INFO:   1 - 00000                     	PSNR: 26.982571 dB
+19-12-30 14:53:32.289 - INFO:   2 - 00001                     	PSNR: 27.109379 dB
+19-12-30 14:53:37.057 - INFO:   3 - 00002                     	PSNR: 27.040714 dB
+19-12-30 14:53:41.838 - INFO:   4 - 00003                     	PSNR: 27.049864 dB
+19-12-30 14:53:46.617 - INFO:   5 - 00004                     	PSNR: 26.993277 dB
+19-12-30 14:53:51.395 - INFO:   6 - 00005                     	PSNR: 27.096155 dB
+19-12-30 14:53:56.180 - INFO:   7 - 00006                     	PSNR: 27.110309 dB
+19-12-30 14:54:00.985 - INFO:   8 - 00007                     	PSNR: 27.124934 dB
+19-12-30 14:54:05.766 - INFO:   9 - 00008                     	PSNR: 26.949339 dB
+19-12-30 14:54:10.553 - INFO:  10 - 00009                     	PSNR: 26.926332 dB
+19-12-30 14:54:10.553 - INFO: Folder 35335960 - Average PSNR: 27.038287 dB for 10 frames; Center PSNR: 27.069209 dB for 6 frames; Border PSNR: 26.991905 dB for 4 frames.
+19-12-30 14:54:17.665 - INFO:   1 - 00000                     	PSNR: 30.232549 dB
+19-12-30 14:54:22.332 - INFO:   2 - 00001                     	PSNR: 29.994389 dB
+19-12-30 14:54:26.986 - INFO:   3 - 00002                     	PSNR: 29.149054 dB
+19-12-30 14:54:31.655 - INFO:   4 - 00003                     	PSNR: 29.379182 dB
+19-12-30 14:54:36.317 - INFO:   5 - 00004                     	PSNR: 29.989400 dB
+19-12-30 14:54:40.980 - INFO:   6 - 00005                     	PSNR: 31.327363 dB
+19-12-30 14:54:45.649 - INFO:   7 - 00006                     	PSNR: 30.877166 dB
+19-12-30 14:54:50.330 - INFO:   8 - 00007                     	PSNR: 30.384154 dB
+19-12-30 14:54:55.003 - INFO:   9 - 00008                     	PSNR: 30.694187 dB
+19-12-30 14:54:59.692 - INFO:  10 - 00009                     	PSNR: 30.858035 dB
+19-12-30 14:54:59.692 - INFO: Folder 38137866 - Average PSNR: 30.288548 dB for 10 frames; Center PSNR: 30.184387 dB for 6 frames; Border PSNR: 30.444790 dB for 4 frames.
+19-12-30 14:55:06.924 - INFO:   1 - 00000                     	PSNR: 29.839513 dB
+19-12-30 14:55:11.584 - INFO:   2 - 00001                     	PSNR: 29.984187 dB
+19-12-30 14:55:16.243 - INFO:   3 - 00002                     	PSNR: 29.912734 dB
+19-12-30 14:55:20.904 - INFO:   4 - 00003                     	PSNR: 29.809299 dB
+19-12-30 14:55:25.567 - INFO:   5 - 00004                     	PSNR: 29.762271 dB
+19-12-30 14:55:30.235 - INFO:   6 - 00005                     	PSNR: 29.779802 dB
+19-12-30 14:55:34.904 - INFO:   7 - 00006                     	PSNR: 29.708200 dB
+19-12-30 14:55:39.583 - INFO:   8 - 00007                     	PSNR: 29.371444 dB
+19-12-30 14:55:44.257 - INFO:   9 - 00008                     	PSNR: 29.146222 dB
+19-12-30 14:55:48.969 - INFO:  10 - 00009                     	PSNR: 28.737149 dB
+19-12-30 14:55:48.970 - INFO: Folder 46218028 - Average PSNR: 29.605082 dB for 10 frames; Center PSNR: 29.723958 dB for 6 frames; Border PSNR: 29.426768 dB for 4 frames.
+19-12-30 14:55:56.252 - INFO:   1 - 00000                     	PSNR: 30.935066 dB
+19-12-30 14:56:00.896 - INFO:   2 - 00001                     	PSNR: 30.556604 dB
+19-12-30 14:56:05.546 - INFO:   3 - 00002                     	PSNR: 30.785165 dB
+19-12-30 14:56:10.195 - INFO:   4 - 00003                     	PSNR: 30.166356 dB
+19-12-30 14:56:14.848 - INFO:   5 - 00004                     	PSNR: 29.825188 dB
+19-12-30 14:56:19.504 - INFO:   6 - 00005                     	PSNR: 29.999357 dB
+19-12-30 14:56:24.166 - INFO:   7 - 00006                     	PSNR: 30.230339 dB
+19-12-30 14:56:28.816 - INFO:   8 - 00007                     	PSNR: 30.589071 dB
+19-12-30 14:56:33.490 - INFO:   9 - 00008                     	PSNR: 30.804264 dB
+19-12-30 14:56:38.165 - INFO:  10 - 00009                     	PSNR: 30.446124 dB
+19-12-30 14:56:38.166 - INFO: Folder 46922829 - Average PSNR: 30.433753 dB for 10 frames; Center PSNR: 30.265913 dB for 6 frames; Border PSNR: 30.685514 dB for 4 frames.
+19-12-30 14:56:45.305 - INFO:   1 - 00000                     	PSNR: 31.707522 dB
+19-12-30 14:56:49.954 - INFO:   2 - 00001                     	PSNR: 31.885653 dB
+19-12-30 14:56:54.604 - INFO:   3 - 00002                     	PSNR: 32.356975 dB
+19-12-30 14:56:59.257 - INFO:   4 - 00003                     	PSNR: 31.467649 dB
+19-12-30 14:57:03.913 - INFO:   5 - 00004                     	PSNR: 31.954724 dB
+19-12-30 14:57:08.571 - INFO:   6 - 00005                     	PSNR: 32.175077 dB
+19-12-30 14:57:13.219 - INFO:   7 - 00006                     	PSNR: 32.586458 dB
+19-12-30 14:57:17.889 - INFO:   8 - 00007                     	PSNR: 33.582437 dB
+19-12-30 14:57:22.568 - INFO:   9 - 00008                     	PSNR: 32.354052 dB
+19-12-30 14:57:27.228 - INFO:  10 - 00009                     	PSNR: 32.307495 dB
+19-12-30 14:57:27.228 - INFO: Folder 47198512 - Average PSNR: 32.237804 dB for 10 frames; Center PSNR: 32.353887 dB for 6 frames; Border PSNR: 32.063681 dB for 4 frames.
+19-12-30 14:57:34.352 - INFO:   1 - 00000                     	PSNR: 34.393625 dB
+19-12-30 14:57:38.967 - INFO:   2 - 00001                     	PSNR: 33.708971 dB
+19-12-30 14:57:43.574 - INFO:   3 - 00002                     	PSNR: 34.925970 dB
+19-12-30 14:57:48.184 - INFO:   4 - 00003                     	PSNR: 34.766706 dB
+19-12-30 14:57:52.794 - INFO:   5 - 00004                     	PSNR: 33.733102 dB
+19-12-30 14:57:57.404 - INFO:   6 - 00005                     	PSNR: 33.039684 dB
+19-12-30 14:58:02.015 - INFO:   7 - 00006                     	PSNR: 32.626985 dB
+19-12-30 14:58:06.643 - INFO:   8 - 00007                     	PSNR: 32.576828 dB
+19-12-30 14:58:11.262 - INFO:   9 - 00008                     	PSNR: 32.728307 dB
+19-12-30 14:58:15.870 - INFO:  10 - 00009                     	PSNR: 32.627013 dB
+19-12-30 14:58:15.871 - INFO: Folder 48395927 - Average PSNR: 33.512719 dB for 10 frames; Center PSNR: 33.611546 dB for 6 frames; Border PSNR: 33.364479 dB for 4 frames.
+19-12-30 14:58:23.075 - INFO:   1 - 00000                     	PSNR: 31.993458 dB
+19-12-30 14:58:27.737 - INFO:   2 - 00001                     	PSNR: 32.129367 dB
+19-12-30 14:58:32.381 - INFO:   3 - 00002                     	PSNR: 32.120779 dB
+19-12-30 14:58:37.024 - INFO:   4 - 00003                     	PSNR: 32.177378 dB
+19-12-30 14:58:41.672 - INFO:   5 - 00004                     	PSNR: 32.233878 dB
+19-12-30 14:58:46.331 - INFO:   6 - 00005                     	PSNR: 32.161038 dB
+19-12-30 14:58:50.983 - INFO:   7 - 00006                     	PSNR: 32.254612 dB
+19-12-30 14:58:55.636 - INFO:   8 - 00007                     	PSNR: 32.253399 dB
+19-12-30 14:59:00.286 - INFO:   9 - 00008                     	PSNR: 32.364593 dB
+19-12-30 14:59:04.943 - INFO:  10 - 00009                     	PSNR: 32.236277 dB
+19-12-30 14:59:04.943 - INFO: Folder 49837998 - Average PSNR: 32.192478 dB for 10 frames; Center PSNR: 32.200181 dB for 6 frames; Border PSNR: 32.180924 dB for 4 frames.
+19-12-30 14:59:12.169 - INFO:   1 - 00000                     	PSNR: 26.824288 dB
+19-12-30 14:59:16.869 - INFO:   2 - 00001                     	PSNR: 26.863034 dB
+19-12-30 14:59:21.569 - INFO:   3 - 00002                     	PSNR: 27.185807 dB
+19-12-30 14:59:26.273 - INFO:   4 - 00003                     	PSNR: 27.320462 dB
+19-12-30 14:59:30.972 - INFO:   5 - 00004                     	PSNR: 27.300792 dB
+19-12-30 14:59:35.682 - INFO:   6 - 00005                     	PSNR: 26.975037 dB
+19-12-30 14:59:40.384 - INFO:   7 - 00006                     	PSNR: 26.922855 dB
+19-12-30 14:59:45.087 - INFO:   8 - 00007                     	PSNR: 26.960824 dB
+19-12-30 14:59:49.784 - INFO:   9 - 00008                     	PSNR: 27.062682 dB
+19-12-30 14:59:54.484 - INFO:  10 - 00009                     	PSNR: 26.625068 dB
+19-12-30 14:59:54.485 - INFO: Folder 54327254 - Average PSNR: 27.004085 dB for 10 frames; Center PSNR: 27.110963 dB for 6 frames; Border PSNR: 26.843768 dB for 4 frames.
+19-12-30 15:00:01.631 - INFO:   1 - 00000                     	PSNR: 30.075971 dB
+19-12-30 15:00:06.304 - INFO:   2 - 00001                     	PSNR: 30.079818 dB
+19-12-30 15:00:10.979 - INFO:   3 - 00002                     	PSNR: 30.063270 dB
+19-12-30 15:00:15.665 - INFO:   4 - 00003                     	PSNR: 30.073055 dB
+19-12-30 15:00:20.340 - INFO:   5 - 00004                     	PSNR: 30.055198 dB
+19-12-30 15:00:25.022 - INFO:   6 - 00005                     	PSNR: 30.140459 dB
+19-12-30 15:00:29.726 - INFO:   7 - 00006                     	PSNR: 29.633173 dB
+19-12-30 15:00:34.433 - INFO:   8 - 00007                     	PSNR: 30.573479 dB
+19-12-30 15:00:39.147 - INFO:   9 - 00008                     	PSNR: 30.463122 dB
+19-12-30 15:00:43.841 - INFO:  10 - 00009                     	PSNR: 30.422309 dB
+19-12-30 15:00:43.843 - INFO: Folder 55140422 - Average PSNR: 30.157985 dB for 10 frames; Center PSNR: 30.089772 dB for 6 frames; Border PSNR: 30.260305 dB for 4 frames.
+19-12-30 15:00:50.853 - INFO:   1 - 00000                     	PSNR: 35.054103 dB
+19-12-30 15:00:55.498 - INFO:   2 - 00001                     	PSNR: 35.331943 dB
+19-12-30 15:01:00.147 - INFO:   3 - 00002                     	PSNR: 35.698119 dB
+19-12-30 15:01:04.792 - INFO:   4 - 00003                     	PSNR: 35.276286 dB
+19-12-30 15:01:09.437 - INFO:   5 - 00004                     	PSNR: 35.245310 dB
+19-12-30 15:01:14.100 - INFO:   6 - 00005                     	PSNR: 34.970882 dB
+19-12-30 15:01:18.748 - INFO:   7 - 00006                     	PSNR: 34.257852 dB
+19-12-30 15:01:23.404 - INFO:   8 - 00007                     	PSNR: 33.746569 dB
+19-12-30 15:01:28.054 - INFO:   9 - 00008                     	PSNR: 33.044797 dB
+19-12-30 15:01:32.725 - INFO:  10 - 00009                     	PSNR: 33.105852 dB
+19-12-30 15:01:32.725 - INFO: Folder 62742465 - Average PSNR: 34.573171 dB for 10 frames; Center PSNR: 34.865836 dB for 6 frames; Border PSNR: 34.134174 dB for 4 frames.
+19-12-30 15:01:39.793 - INFO:   1 - 00000                     	PSNR: 36.696440 dB
+19-12-30 15:01:44.402 - INFO:   2 - 00001                     	PSNR: 37.378972 dB
+19-12-30 15:01:49.011 - INFO:   3 - 00002                     	PSNR: 38.293738 dB
+19-12-30 15:01:53.612 - INFO:   4 - 00003                     	PSNR: 37.865025 dB
+19-12-30 15:01:58.207 - INFO:   5 - 00004                     	PSNR: 37.969950 dB
+19-12-30 15:02:02.803 - INFO:   6 - 00005                     	PSNR: 37.824047 dB
+19-12-30 15:02:07.405 - INFO:   7 - 00006                     	PSNR: 38.037476 dB
+19-12-30 15:02:11.999 - INFO:   8 - 00007                     	PSNR: 37.819235 dB
+19-12-30 15:02:16.600 - INFO:   9 - 00008                     	PSNR: 37.402690 dB
+19-12-30 15:02:21.202 - INFO:  10 - 00009                     	PSNR: 37.153795 dB
+19-12-30 15:02:21.202 - INFO: Folder 77688322 - Average PSNR: 37.644137 dB for 10 frames; Center PSNR: 37.968245 dB for 6 frames; Border PSNR: 37.157974 dB for 4 frames.
+19-12-30 15:02:28.565 - INFO:   1 - 00000                     	PSNR: 29.174385 dB
+19-12-30 15:02:33.263 - INFO:   2 - 00001                     	PSNR: 32.571677 dB
+19-12-30 15:02:37.981 - INFO:   3 - 00002                     	PSNR: 28.710248 dB
+19-12-30 15:02:42.696 - INFO:   4 - 00003                     	PSNR: 14.604560 dB
+19-12-30 15:02:47.442 - INFO:   5 - 00004                     	PSNR: 13.421921 dB
+19-12-30 15:02:52.174 - INFO:   6 - 00005                     	PSNR: 16.889598 dB
+19-12-30 15:02:56.885 - INFO:   7 - 00006                     	PSNR: 23.498858 dB
+19-12-30 15:03:01.588 - INFO:   8 - 00007                     	PSNR: 34.507154 dB
+19-12-30 15:03:06.050 - INFO:   9 - 00008                     	PSNR: 32.505802 dB
+19-12-30 15:03:10.645 - INFO:  10 - 00009                     	PSNR: 28.900521 dB
+19-12-30 15:03:10.645 - INFO: Folder 84009993 - Average PSNR: 25.478472 dB for 10 frames; Center PSNR: 21.938723 dB for 6 frames; Border PSNR: 30.788096 dB for 4 frames.
+19-12-30 15:03:17.770 - INFO:   1 - 00000                     	PSNR: 26.137116 dB
+19-12-30 15:03:22.325 - INFO:   2 - 00001                     	PSNR: 27.059107 dB
+19-12-30 15:03:26.946 - INFO:   3 - 00002                     	PSNR: 27.217175 dB
+19-12-30 15:03:31.550 - INFO:   4 - 00003                     	PSNR: 27.655755 dB
+19-12-30 15:03:36.126 - INFO:   5 - 00004                     	PSNR: 28.084110 dB
+19-12-30 15:03:40.755 - INFO:   6 - 00005                     	PSNR: 28.460518 dB
+19-12-30 15:03:45.381 - INFO:   7 - 00006                     	PSNR: 28.759893 dB
+19-12-30 15:03:49.959 - INFO:   8 - 00007                     	PSNR: 29.071400 dB
+19-12-30 15:03:54.584 - INFO:   9 - 00008                     	PSNR: 28.859052 dB
+19-12-30 15:03:59.188 - INFO:  10 - 00009                     	PSNR: 28.428326 dB
+19-12-30 15:03:59.189 - INFO: Folder 88753810 - Average PSNR: 27.973245 dB for 10 frames; Center PSNR: 28.208142 dB for 6 frames; Border PSNR: 27.620900 dB for 4 frames.
+19-12-30 15:04:06.269 - INFO:   1 - 00000                     	PSNR: 27.135934 dB
+19-12-30 15:04:10.901 - INFO:   2 - 00001                     	PSNR: 27.147731 dB
+19-12-30 15:04:15.535 - INFO:   3 - 00002                     	PSNR: 26.958780 dB
+19-12-30 15:04:20.173 - INFO:   4 - 00003                     	PSNR: 27.142297 dB
+19-12-30 15:04:24.812 - INFO:   5 - 00004                     	PSNR: 26.906022 dB
+19-12-30 15:04:29.458 - INFO:   6 - 00005                     	PSNR: 26.631183 dB
+19-12-30 15:04:34.094 - INFO:   7 - 00006                     	PSNR: 26.521253 dB
+19-12-30 15:04:38.733 - INFO:   8 - 00007                     	PSNR: 26.608357 dB
+19-12-30 15:04:43.372 - INFO:   9 - 00008                     	PSNR: 26.535693 dB
+19-12-30 15:04:48.011 - INFO:  10 - 00009                     	PSNR: 26.417331 dB
+19-12-30 15:04:48.011 - INFO: Folder 90845958 - Average PSNR: 26.800458 dB for 10 frames; Center PSNR: 26.794649 dB for 6 frames; Border PSNR: 26.809172 dB for 4 frames.
+19-12-30 15:04:55.051 - INFO:   1 - 00000                     	PSNR: 35.081464 dB
+19-12-30 15:04:59.664 - INFO:   2 - 00001                     	PSNR: 35.154029 dB
+19-12-30 15:05:04.278 - INFO:   3 - 00002                     	PSNR: 35.221902 dB
+19-12-30 15:05:08.894 - INFO:   4 - 00003                     	PSNR: 35.206748 dB
+19-12-30 15:05:13.510 - INFO:   5 - 00004                     	PSNR: 35.388886 dB
+19-12-30 15:05:18.125 - INFO:   6 - 00005                     	PSNR: 35.131219 dB
+19-12-30 15:05:22.737 - INFO:   7 - 00006                     	PSNR: 35.308289 dB
+19-12-30 15:05:27.367 - INFO:   8 - 00007                     	PSNR: 35.014226 dB
+19-12-30 15:05:31.989 - INFO:   9 - 00008                     	PSNR: 35.246659 dB
+19-12-30 15:05:36.602 - INFO:  10 - 00009                     	PSNR: 35.274131 dB
+19-12-30 15:05:36.603 - INFO: Folder 95139444 - Average PSNR: 35.202755 dB for 10 frames; Center PSNR: 35.211878 dB for 6 frames; Border PSNR: 35.189071 dB for 4 frames.
+19-12-30 15:05:43.648 - INFO:   1 - 00000                     	PSNR: 30.879425 dB
+19-12-30 15:05:48.312 - INFO:   2 - 00001                     	PSNR: 30.806962 dB
+19-12-30 15:05:52.982 - INFO:   3 - 00002                     	PSNR: 31.030941 dB
+19-12-30 15:05:57.654 - INFO:   4 - 00003                     	PSNR: 31.050504 dB
+19-12-30 15:06:02.327 - INFO:   5 - 00004                     	PSNR: 31.463764 dB
+19-12-30 15:06:07.005 - INFO:   6 - 00005                     	PSNR: 30.972393 dB
+19-12-30 15:06:11.685 - INFO:   7 - 00006                     	PSNR: 31.079432 dB
+19-12-30 15:06:16.364 - INFO:   8 - 00007                     	PSNR: 30.616128 dB
+19-12-30 15:06:21.043 - INFO:   9 - 00008                     	PSNR: 30.394625 dB
+19-12-30 15:06:25.719 - INFO:  10 - 00009                     	PSNR: 30.265318 dB
+19-12-30 15:06:25.719 - INFO: Folder 95345919 - Average PSNR: 30.855949 dB for 10 frames; Center PSNR: 31.035527 dB for 6 frames; Border PSNR: 30.586583 dB for 4 frames.
+19-12-30 15:06:25.719 - INFO: ################ Tidy Outputs ################
+19-12-30 15:06:25.720 - INFO: Folder 10547315 - Average PSNR: 29.723620 dB. Center PSNR: 29.936683 dB. Border PSNR: 29.404025 dB.
+19-12-30 15:06:25.720 - INFO: Folder 15099945 - Average PSNR: 34.009096 dB. Center PSNR: 34.036567 dB. Border PSNR: 33.967890 dB.
+19-12-30 15:06:25.720 - INFO: Folder 23887359 - Average PSNR: 30.513178 dB. Center PSNR: 30.985943 dB. Border PSNR: 29.804030 dB.
+19-12-30 15:06:25.720 - INFO: Folder 27823417 - Average PSNR: 31.078076 dB. Center PSNR: 31.331429 dB. Border PSNR: 30.698047 dB.
+19-12-30 15:06:25.720 - INFO: Folder 35335960 - Average PSNR: 27.038287 dB. Center PSNR: 27.069209 dB. Border PSNR: 26.991905 dB.
+19-12-30 15:06:25.720 - INFO: Folder 38137866 - Average PSNR: 30.288548 dB. Center PSNR: 30.184387 dB. Border PSNR: 30.444790 dB.
+19-12-30 15:06:25.720 - INFO: Folder 46218028 - Average PSNR: 29.605082 dB. Center PSNR: 29.723958 dB. Border PSNR: 29.426768 dB.
+19-12-30 15:06:25.720 - INFO: Folder 46922829 - Average PSNR: 30.433753 dB. Center PSNR: 30.265913 dB. Border PSNR: 30.685514 dB.
+19-12-30 15:06:25.720 - INFO: Folder 47198512 - Average PSNR: 32.237804 dB. Center PSNR: 32.353887 dB. Border PSNR: 32.063681 dB.
+19-12-30 15:06:25.720 - INFO: Folder 48395927 - Average PSNR: 33.512719 dB. Center PSNR: 33.611546 dB. Border PSNR: 33.364479 dB.
+19-12-30 15:06:25.720 - INFO: Folder 49837998 - Average PSNR: 32.192478 dB. Center PSNR: 32.200181 dB. Border PSNR: 32.180924 dB.
+19-12-30 15:06:25.720 - INFO: Folder 54327254 - Average PSNR: 27.004085 dB. Center PSNR: 27.110963 dB. Border PSNR: 26.843768 dB.
+19-12-30 15:06:25.720 - INFO: Folder 55140422 - Average PSNR: 30.157985 dB. Center PSNR: 30.089772 dB. Border PSNR: 30.260305 dB.
+19-12-30 15:06:25.720 - INFO: Folder 62742465 - Average PSNR: 34.573171 dB. Center PSNR: 34.865836 dB. Border PSNR: 34.134174 dB.
+19-12-30 15:06:25.720 - INFO: Folder 77688322 - Average PSNR: 37.644137 dB. Center PSNR: 37.968245 dB. Border PSNR: 37.157974 dB.
+19-12-30 15:06:25.720 - INFO: Folder 84009993 - Average PSNR: 25.478472 dB. Center PSNR: 21.938723 dB. Border PSNR: 30.788096 dB.
+19-12-30 15:06:25.721 - INFO: Folder 88753810 - Average PSNR: 27.973245 dB. Center PSNR: 28.208142 dB. Border PSNR: 27.620900 dB.
+19-12-30 15:06:25.721 - INFO: Folder 90845958 - Average PSNR: 26.800458 dB. Center PSNR: 26.794649 dB. Border PSNR: 26.809172 dB.
+19-12-30 15:06:25.721 - INFO: Folder 95139444 - Average PSNR: 35.202755 dB. Center PSNR: 35.211878 dB. Border PSNR: 35.189071 dB.
+19-12-30 15:06:25.721 - INFO: Folder 95345919 - Average PSNR: 30.855949 dB. Center PSNR: 31.035527 dB. Border PSNR: 30.586583 dB.
+19-12-30 15:06:25.721 - INFO: ################ Final Results ################
+19-12-30 15:06:25.721 - INFO: Data: sharp_bicubic - /lustre/home/acct-eezy/eezy/4khdr/codes/HeJing_4K_SuperResolution-master/val_data/lr
+19-12-30 15:06:25.721 - INFO: Padding mode: new_info
+19-12-30 15:06:25.721 - INFO: Model path: /lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_cos/models/best_G.pth
+19-12-30 15:06:25.721 - INFO: Save images: True
+19-12-30 15:06:25.721 - INFO: Flip test: False
+19-12-30 15:06:25.721 - INFO: Total Average PSNR: 30.816145 dB for 20 clips. Center PSNR: 30.746172 dB. Border PSNR: 30.921105 dB.

@@ -1,0 +1,256 @@
+export CUDA_VISIBLE_DEVICES=0,1,2,3
+OrderedDict([('pretrain_model_G', '/lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_yuv_parallel_L_0/models/0000_G.pth'), ('save_path', '/lustre/home/acct-eezy/eezy/4khdr/codes/'), ('strict_load', True), ('resume_state', None)])
+/lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_yuv_parallel_L_1
+export CUDA_VISIBLE_DEVICES=0,1,2,3
+OrderedDict([('pretrain_model_G', '/lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_yuv_parallel_L_0/models/0000_G.pth'), ('save_path', '/lustre/home/acct-eezy/eezy/4khdr/codes/'), ('strict_load', True), ('resume_state', None)])
+/lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_yuv_parallel_L_1
+export CUDA_VISIBLE_DEVICES=0,1,2,3
+OrderedDict([('pretrain_model_G', '/lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_yuv_parallel_L_0/models/0000_G.pth'), ('save_path', '/lustre/home/acct-eezy/eezy/4khdr/codes/'), ('strict_load', True), ('resume_state', None)])
+/lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_yuv_parallel_L_1
+export CUDA_VISIBLE_DEVICES=0,1,2,3
+OrderedDict([('pretrain_model_G', '/lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_yuv_parallel_L_0/models/0000_G.pth'), ('save_path', '/lustre/home/acct-eezy/eezy/4khdr/codes/'), ('strict_load', True), ('resume_state', None)])
+/lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_yuv_parallel_L_1
+Num GPUs  4
+RANK  2
+Num GPUs  4
+RANK  0
+Num GPUs  4
+RANK  1
+Num GPUs  4
+RANK  3
+Rank:Rank:  31
+
+------------------DIST-------------------------------------------DIST-------------------------
+
+set train log
+set train log
+set val log
+set val log
+
+Val Dataset Initialized
+
+
+Val Dataset Initialized
+
+Rank: 2
+------------------DIST-------------------------
+set train log
+set val log
+Rank: 0
+------------------DIST-------------------------
+
+Val Dataset Initialized
+
+
+Val Dataset Initialized
+
+Use ReduceLROnPlateau
+Not Resume Training
+Use ReduceLROnPlateau
+Not Resume Training
+Use ReduceLROnPlateau
+Not Resume Training
+Use ReduceLROnPlateau
+Not Resume Training
+[                              ] 0/100, elapsed: 0s, ETA:
+Start...
+[2F[J[------------------------------] 1/100, 0.0 task/s, elapsed: 26s, ETA:  2569s
+Test 62600438 - 0/100
+[2F[J[------------------------------] 2/100, 0.1 task/s, elapsed: 26s, ETA:  1271s
+Test 62600438 - 0/100
+[2F[J[------------------------------] 3/100, 0.1 task/s, elapsed: 26s, ETA:   839s
+Test 62600438 - 0/100
+[2F[J[>-----------------------------] 4/100, 0.2 task/s, elapsed: 26s, ETA:   623s
+Test 62600438 - 0/100
+[2F[J[>-----------------------------] 5/100, 0.1 task/s, elapsed: 37s, ETA:   710s
+Test 62600438 - 4/100
+[2F[J[>-----------------------------] 6/100, 0.2 task/s, elapsed: 37s, ETA:   586s
+Test 62600438 - 4/100
+[2F[J[>>----------------------------] 7/100, 0.2 task/s, elapsed: 37s, ETA:   497s
+Test 62600438 - 4/100
+[2F[J[>>----------------------------] 8/100, 0.2 task/s, elapsed: 37s, ETA:   430s
+Test 62600438 - 4/100
+[2F[J[>>----------------------------] 9/100, 0.2 task/s, elapsed: 49s, ETA:   495s
+Test 62600438 - 8/100
+[2F[J[>>>---------------------------] 10/100, 0.2 task/s, elapsed: 49s, ETA:   441s
+Test 62600438 - 8/100
+[2F[J[>>>---------------------------] 11/100, 0.2 task/s, elapsed: 49s, ETA:   396s
+Test 62600438 - 8/100
+[2F[J[>>>---------------------------] 12/100, 0.2 task/s, elapsed: 49s, ETA:   359s
+Test 62600438 - 8/100
+[2F[J[>>>---------------------------] 13/100, 0.2 task/s, elapsed: 61s, ETA:   405s
+Test 62600438 - 12/100
+[2F[J[>>>>--------------------------] 14/100, 0.2 task/s, elapsed: 61s, ETA:   372s
+Test 62600438 - 12/100
+[2F[J[>>>>--------------------------] 15/100, 0.2 task/s, elapsed: 61s, ETA:   343s
+Test 62600438 - 12/100
+[2F[J[>>>>--------------------------] 16/100, 0.3 task/s, elapsed: 61s, ETA:   318s
+Test 62600438 - 12/100
+[2F[J[>>>>>-------------------------] 17/100, 0.2 task/s, elapsed: 72s, ETA:   353s
+Test 62600438 - 16/100
+[2F[J[>>>>>-------------------------] 18/100, 0.2 task/s, elapsed: 72s, ETA:   329s
+Test 62600438 - 16/100
+[2F[J[>>>>>-------------------------] 19/100, 0.3 task/s, elapsed: 72s, ETA:   308s
+Test 62600438 - 16/100
+[2F[J[>>>>>>------------------------] 20/100, 0.3 task/s, elapsed: 72s, ETA:   289s
+Test 62600438 - 16/100
+[2F[J[>>>>>>------------------------] 21/100, 0.3 task/s, elapsed: 84s, ETA:   316s
+Test 62600438 - 20/100
+[2F[J[>>>>>>------------------------] 22/100, 0.3 task/s, elapsed: 84s, ETA:   298s
+Test 62600438 - 20/100
+[2F[J[>>>>>>------------------------] 23/100, 0.3 task/s, elapsed: 84s, ETA:   281s
+Test 62600438 - 20/100
+[2F[J[>>>>>>>-----------------------] 24/100, 0.3 task/s, elapsed: 84s, ETA:   266s
+Test 62600438 - 20/100
+[2F[J[>>>>>>>-----------------------] 25/100, 0.3 task/s, elapsed: 96s, ETA:   287s
+Test 62600438 - 24/100
+[2F[J[>>>>>>>-----------------------] 26/100, 0.3 task/s, elapsed: 96s, ETA:   272s
+Test 62600438 - 24/100
+[2F[J[>>>>>>>>----------------------] 27/100, 0.3 task/s, elapsed: 96s, ETA:   258s
+Test 62600438 - 24/100
+[2F[J[>>>>>>>>----------------------] 28/100, 0.3 task/s, elapsed: 96s, ETA:   246s
+Test 62600438 - 24/100
+[2F[J[>>>>>>>>----------------------] 29/100, 0.3 task/s, elapsed: 108s, ETA:   263s
+Test 62600438 - 28/100
+[2F[J[>>>>>>>>>---------------------] 30/100, 0.3 task/s, elapsed: 108s, ETA:   251s
+Test 62600438 - 28/100
+[2F[J[>>>>>>>>>---------------------] 31/100, 0.3 task/s, elapsed: 108s, ETA:   239s
+Test 62600438 - 28/100
+[2F[J[>>>>>>>>>---------------------] 32/100, 0.3 task/s, elapsed: 108s, ETA:   229s
+Test 62600438 - 28/100
+[2F[J[>>>>>>>>>---------------------] 33/100, 0.3 task/s, elapsed: 119s, ETA:   243s
+Test 62600438 - 32/100
+[2F[J[>>>>>>>>>>--------------------] 34/100, 0.3 task/s, elapsed: 119s, ETA:   232s
+Test 62600438 - 32/100
+[2F[J[>>>>>>>>>>--------------------] 35/100, 0.3 task/s, elapsed: 119s, ETA:   222s
+Test 62600438 - 32/100
+[2F[J[>>>>>>>>>>--------------------] 36/100, 0.3 task/s, elapsed: 119s, ETA:   212s
+Test 62600438 - 32/100
+[2F[J[>>>>>>>>>>>-------------------] 37/100, 0.3 task/s, elapsed: 131s, ETA:   223s
+Test 62600438 - 36/100
+[2F[J[>>>>>>>>>>>-------------------] 38/100, 0.3 task/s, elapsed: 131s, ETA:   213s
+Test 62600438 - 36/100
+[2F[J[>>>>>>>>>>>-------------------] 39/100, 0.3 task/s, elapsed: 131s, ETA:   204s
+Test 62600438 - 36/100
+[2F[J[>>>>>>>>>>>>------------------] 40/100, 0.3 task/s, elapsed: 131s, ETA:   196s
+Test 62600438 - 36/100
+[2F[J[>>>>>>>>>>>>------------------] 41/100, 0.3 task/s, elapsed: 142s, ETA:   205s
+Test 62600438 - 40/100
+[2F[J[>>>>>>>>>>>>------------------] 42/100, 0.3 task/s, elapsed: 142s, ETA:   197s
+Test 62600438 - 40/100
+[2F[J[>>>>>>>>>>>>------------------] 43/100, 0.3 task/s, elapsed: 142s, ETA:   189s
+Test 62600438 - 40/100
+[2F[J[>>>>>>>>>>>>>-----------------] 44/100, 0.3 task/s, elapsed: 142s, ETA:   181s
+Test 62600438 - 40/100
+[2F[J[>>>>>>>>>>>>>-----------------] 45/100, 0.3 task/s, elapsed: 154s, ETA:   188s
+Test 62600438 - 44/100
+[2F[J[>>>>>>>>>>>>>-----------------] 46/100, 0.3 task/s, elapsed: 154s, ETA:   181s
+Test 62600438 - 44/100
+[2F[J[>>>>>>>>>>>>>>----------------] 47/100, 0.3 task/s, elapsed: 154s, ETA:   174s
+Test 62600438 - 44/100
+[2F[J[>>>>>>>>>>>>>>----------------] 48/100, 0.3 task/s, elapsed: 154s, ETA:   167s
+Test 62600438 - 44/100
+[2F[J[>>>>>>>>>>>>>>----------------] 49/100, 0.3 task/s, elapsed: 166s, ETA:   172s
+Test 62600438 - 48/100
+[2F[J[>>>>>>>>>>>>>>>---------------] 50/100, 0.3 task/s, elapsed: 166s, ETA:   166s
+Test 62600438 - 48/100
+[2F[J[>>>>>>>>>>>>>>>---------------] 51/100, 0.3 task/s, elapsed: 166s, ETA:   159s
+Test 62600438 - 48/100
+[2F[J[>>>>>>>>>>>>>>>---------------] 52/100, 0.3 task/s, elapsed: 166s, ETA:   153s
+Test 62600438 - 48/100
+[2F[J[>>>>>>>>>>>>>>>---------------] 53/100, 0.3 task/s, elapsed: 177s, ETA:   157s
+Test 62600438 - 52/100
+[2F[J[>>>>>>>>>>>>>>>>--------------] 54/100, 0.3 task/s, elapsed: 177s, ETA:   151s
+Test 62600438 - 52/100
+[2F[J[>>>>>>>>>>>>>>>>--------------] 55/100, 0.3 task/s, elapsed: 177s, ETA:   145s
+Test 62600438 - 52/100
+[2F[J[>>>>>>>>>>>>>>>>--------------] 56/100, 0.3 task/s, elapsed: 177s, ETA:   139s
+Test 62600438 - 52/100
+[2F[J[>>>>>>>>>>>>>>>>>-------------] 57/100, 0.3 task/s, elapsed: 189s, ETA:   142s
+Test 62600438 - 56/100
+[2F[J[>>>>>>>>>>>>>>>>>-------------] 58/100, 0.3 task/s, elapsed: 189s, ETA:   137s
+Test 62600438 - 56/100
+[2F[J[>>>>>>>>>>>>>>>>>-------------] 59/100, 0.3 task/s, elapsed: 189s, ETA:   131s
+Test 62600438 - 56/100
+[2F[J[>>>>>>>>>>>>>>>>>>------------] 60/100, 0.3 task/s, elapsed: 189s, ETA:   126s
+Test 62600438 - 56/100
+[2F[J[>>>>>>>>>>>>>>>>>>------------] 61/100, 0.3 task/s, elapsed: 201s, ETA:   128s
+Test 62600438 - 60/100
+[2F[J[>>>>>>>>>>>>>>>>>>------------] 62/100, 0.3 task/s, elapsed: 201s, ETA:   123s
+Test 62600438 - 60/100
+[2F[J[>>>>>>>>>>>>>>>>>>------------] 63/100, 0.3 task/s, elapsed: 201s, ETA:   118s
+Test 62600438 - 60/100
+[2F[J[>>>>>>>>>>>>>>>>>>>-----------] 64/100, 0.3 task/s, elapsed: 201s, ETA:   113s
+Test 62600438 - 60/100
+[2F[J[>>>>>>>>>>>>>>>>>>>-----------] 65/100, 0.3 task/s, elapsed: 211s, ETA:   114s
+Test 62600438 - 64/100
+[2F[J[>>>>>>>>>>>>>>>>>>>-----------] 66/100, 0.3 task/s, elapsed: 211s, ETA:   109s
+Test 62600438 - 64/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>----------] 67/100, 0.3 task/s, elapsed: 211s, ETA:   104s
+Test 62600438 - 64/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>----------] 68/100, 0.3 task/s, elapsed: 211s, ETA:    99s
+Test 62600438 - 64/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>----------] 69/100, 0.3 task/s, elapsed: 223s, ETA:   100s
+Test 62600438 - 68/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>---------] 70/100, 0.3 task/s, elapsed: 223s, ETA:    96s
+Test 62600438 - 68/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>---------] 71/100, 0.3 task/s, elapsed: 223s, ETA:    91s
+Test 62600438 - 68/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>---------] 72/100, 0.3 task/s, elapsed: 223s, ETA:    87s
+Test 62600438 - 68/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>---------] 73/100, 0.3 task/s, elapsed: 234s, ETA:    87s
+Test 62600438 - 72/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>--------] 74/100, 0.3 task/s, elapsed: 234s, ETA:    82s
+Test 62600438 - 72/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>--------] 75/100, 0.3 task/s, elapsed: 234s, ETA:    78s
+Test 62600438 - 72/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>--------] 76/100, 0.3 task/s, elapsed: 234s, ETA:    74s
+Test 62600438 - 72/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>-------] 77/100, 0.3 task/s, elapsed: 246s, ETA:    73s
+Test 62600438 - 76/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>-------] 78/100, 0.3 task/s, elapsed: 246s, ETA:    69s
+Test 62600438 - 76/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>-------] 79/100, 0.3 task/s, elapsed: 246s, ETA:    65s
+Test 62600438 - 76/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>>------] 80/100, 0.3 task/s, elapsed: 246s, ETA:    61s
+Test 62600438 - 76/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>>------] 81/100, 0.3 task/s, elapsed: 257s, ETA:    60s
+Test 62600438 - 80/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>>------] 82/100, 0.3 task/s, elapsed: 257s, ETA:    56s
+Test 62600438 - 80/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>>------] 83/100, 0.3 task/s, elapsed: 257s, ETA:    53s
+Test 62600438 - 80/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>>>-----] 84/100, 0.3 task/s, elapsed: 257s, ETA:    49s
+Test 62600438 - 80/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>>>-----] 85/100, 0.3 task/s, elapsed: 268s, ETA:    47s
+Test 62600438 - 84/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>>>-----] 86/100, 0.3 task/s, elapsed: 268s, ETA:    44s
+Test 62600438 - 84/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>>>>----] 87/100, 0.3 task/s, elapsed: 268s, ETA:    40s
+Test 62600438 - 84/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>>>>----] 88/100, 0.3 task/s, elapsed: 268s, ETA:    37s
+Test 62600438 - 84/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>>>>----] 89/100, 0.3 task/s, elapsed: 279s, ETA:    35s
+Test 62600438 - 88/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>>>>>---] 90/100, 0.3 task/s, elapsed: 279s, ETA:    31s
+Test 62600438 - 88/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>>>>>---] 91/100, 0.3 task/s, elapsed: 279s, ETA:    28s
+Test 62600438 - 88/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>>>>>---] 92/100, 0.3 task/s, elapsed: 279s, ETA:    24s
+Test 62600438 - 88/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>>>>>---] 93/100, 0.3 task/s, elapsed: 290s, ETA:    22s
+Test 62600438 - 92/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>>>>>>--] 94/100, 0.3 task/s, elapsed: 290s, ETA:    19s
+Test 62600438 - 92/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>>>>>>--] 95/100, 0.3 task/s, elapsed: 290s, ETA:    15s
+Test 62600438 - 92/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>>>>>>--] 96/100, 0.3 task/s, elapsed: 290s, ETA:    12s
+Test 62600438 - 92/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-] 97/100, 0.3 task/s, elapsed: 302s, ETA:     9s
+Test 62600438 - 96/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-] 98/100, 0.3 task/s, elapsed: 302s, ETA:     6s
+Test 62600438 - 96/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-] 99/100, 0.3 task/s, elapsed: 302s, ETA:     3s
+Test 62600438 - 96/100
+[2F[J[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 100/100, 0.3 task/s, elapsed: 302s, ETA:     0s
+Test 62600438 - 96/100

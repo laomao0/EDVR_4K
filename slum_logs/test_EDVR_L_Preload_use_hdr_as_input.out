@@ -1,0 +1,222 @@
+OrderedDict([('pretrain_model_G', None), ('save_path', '/lustre/home/acct-eezy/eezy/4khdr/codes/'), ('strict_load', True), ('resume_state', None)])
+GPU  1
+Evaluate Folders:  10547315
+*****************current image process time 	 10.68587040901184s ******************
+*****************current image process time 	 16.877177715301514s ******************
+*****************current image process time 	 22.853756427764893s ******************
+*****************current image process time 	 29.001375675201416s ******************
+*****************current image process time 	 35.186014890670776s ******************
+*****************current image process time 	 41.28352761268616s ******************
+*****************current image process time 	 47.40064311027527s ******************
+*****************current image process time 	 53.634074211120605s ******************
+*****************current image process time 	 59.72895812988281s ******************
+*****************current image process time 	 65.80977177619934s ******************
+Evaluate Folders:  15099945
+*****************current image process time 	 80.72452759742737s ******************
+*****************current image process time 	 86.61658215522766s ******************
+*****************current image process time 	 92.38051557540894s ******************
+*****************current image process time 	 98.27662539482117s ******************
+*****************current image process time 	 104.04098701477051s ******************
+*****************current image process time 	 109.92052054405212s ******************
+*****************current image process time 	 115.71352887153625s ******************
+*****************current image process time 	 121.60926294326782s ******************
+*****************current image process time 	 127.43645477294922s ******************
+*****************current image process time 	 133.32700204849243s ******************
+Evaluate Folders:  23887359
+*****************current image process time 	 149.33777356147766s ******************
+*****************current image process time 	 155.28279066085815s ******************
+*****************current image process time 	 161.32689833641052s ******************
+*****************current image process time 	 167.36831712722778s ******************
+*****************current image process time 	 173.41966462135315s ******************
+*****************current image process time 	 179.4481279850006s ******************
+*****************current image process time 	 185.4947612285614s ******************
+*****************current image process time 	 191.51875758171082s ******************
+*****************current image process time 	 197.57043886184692s ******************
+*****************current image process time 	 203.60806584358215s ******************
+Evaluate Folders:  27823417
+*****************current image process time 	 219.4473123550415s ******************
+*****************current image process time 	 225.44574856758118s ******************
+*****************current image process time 	 231.4516863822937s ******************
+*****************current image process time 	 237.4609694480896s ******************
+*****************current image process time 	 243.46345686912537s ******************
+*****************current image process time 	 249.46166133880615s ******************
+*****************current image process time 	 255.48551106452942s ******************
+*****************current image process time 	 261.5034828186035s ******************
+*****************current image process time 	 267.54322147369385s ******************
+*****************current image process time 	 273.6334903240204s ******************
+Evaluate Folders:  35335960
+*****************current image process time 	 289.96870255470276s ******************
+*****************current image process time 	 296.0832576751709s ******************
+*****************current image process time 	 302.1841628551483s ******************
+*****************current image process time 	 308.2578580379486s ******************
+*****************current image process time 	 314.3662369251251s ******************
+*****************current image process time 	 320.40466594696045s ******************
+*****************current image process time 	 326.5385830402374s ******************
+*****************current image process time 	 332.5864520072937s ******************
+*****************current image process time 	 338.73649525642395s ******************
+*****************current image process time 	 344.8191361427307s ******************
+Evaluate Folders:  38137866
+*****************current image process time 	 360.4233455657959s ******************
+*****************current image process time 	 366.3699345588684s ******************
+*****************current image process time 	 372.2872748374939s ******************
+*****************current image process time 	 378.2363910675049s ******************
+*****************current image process time 	 384.175395488739s ******************
+*****************current image process time 	 390.12106108665466s ******************
+*****************current image process time 	 396.0729172229767s ******************
+*****************current image process time 	 402.0267345905304s ******************
+*****************current image process time 	 407.9827859401703s ******************
+*****************current image process time 	 413.934100151062s ******************
+Evaluate Folders:  46218028
+*****************current image process time 	 430.02943992614746s ******************
+*****************current image process time 	 435.9480710029602s ******************
+*****************current image process time 	 441.958416223526s ******************
+*****************current image process time 	 447.9310655593872s ******************
+*****************current image process time 	 453.96600818634033s ******************
+*****************current image process time 	 459.9338629245758s ******************
+*****************current image process time 	 465.9640510082245s ******************
+*****************current image process time 	 471.93473982810974s ******************
+*****************current image process time 	 477.9680757522583s ******************
+*****************current image process time 	 483.92861223220825s ******************
+Evaluate Folders:  46922829
+*****************current image process time 	 499.82395243644714s ******************
+*****************current image process time 	 505.76497745513916s ******************
+*****************current image process time 	 511.75174140930176s ******************
+*****************current image process time 	 517.7007927894592s ******************
+*****************current image process time 	 523.6875290870667s ******************
+*****************current image process time 	 529.6434319019318s ******************
+*****************current image process time 	 535.6370742321014s ******************
+*****************current image process time 	 541.5721778869629s ******************
+*****************current image process time 	 547.5593576431274s ******************
+*****************current image process time 	 553.5252833366394s ******************
+Evaluate Folders:  47198512
+*****************current image process time 	 569.330162525177s ******************
+*****************current image process time 	 575.2912766933441s ******************
+*****************current image process time 	 581.2903838157654s ******************
+*****************current image process time 	 587.2687797546387s ******************
+*****************current image process time 	 593.2945232391357s ******************
+*****************current image process time 	 599.2772135734558s ******************
+*****************current image process time 	 605.3024640083313s ******************
+*****************current image process time 	 611.2895030975342s ******************
+*****************current image process time 	 617.4031662940979s ******************
+*****************current image process time 	 623.390303850174s ******************
+Evaluate Folders:  48395927
+*****************current image process time 	 638.9046983718872s ******************
+*****************current image process time 	 644.8297743797302s ******************
+*****************current image process time 	 650.7554821968079s ******************
+*****************current image process time 	 656.6905052661896s ******************
+*****************current image process time 	 662.6258354187012s ******************
+*****************current image process time 	 668.5935802459717s ******************
+*****************current image process time 	 674.548581123352s ******************
+*****************current image process time 	 680.5115435123444s ******************
+*****************current image process time 	 686.4650354385376s ******************
+*****************current image process time 	 692.3873898983002s ******************
+Evaluate Folders:  49837998
+*****************current image process time 	 708.2541749477386s ******************
+*****************current image process time 	 714.1989870071411s ******************
+*****************current image process time 	 720.2145805358887s ******************
+*****************current image process time 	 726.2127776145935s ******************
+*****************current image process time 	 732.2194578647614s ******************
+*****************current image process time 	 738.2214734554291s ******************
+*****************current image process time 	 744.2274541854858s ******************
+*****************current image process time 	 750.2180235385895s ******************
+*****************current image process time 	 756.2286040782928s ******************
+*****************current image process time 	 762.2391307353973s ******************
+Evaluate Folders:  54327254
+*****************current image process time 	 778.0817785263062s ******************
+*****************current image process time 	 784.1528284549713s ******************
+*****************current image process time 	 790.2567262649536s ******************
+*****************current image process time 	 796.3646385669708s ******************
+*****************current image process time 	 802.4348297119141s ******************
+*****************current image process time 	 808.5139541625977s ******************
+*****************current image process time 	 814.6194005012512s ******************
+*****************current image process time 	 820.6957805156708s ******************
+*****************current image process time 	 826.7718350887299s ******************
+*****************current image process time 	 832.8749308586121s ******************
+Evaluate Folders:  55140422
+*****************current image process time 	 848.4339292049408s ******************
+*****************current image process time 	 854.473376750946s ******************
+*****************current image process time 	 860.4828338623047s ******************
+*****************current image process time 	 866.5121190547943s ******************
+*****************current image process time 	 872.5338740348816s ******************
+*****************current image process time 	 878.5694315433502s ******************
+*****************current image process time 	 884.6000230312347s ******************
+*****************current image process time 	 890.6279036998749s ******************
+*****************current image process time 	 896.68559217453s ******************
+*****************current image process time 	 902.7373757362366s ******************
+Evaluate Folders:  62742465
+*****************current image process time 	 918.313901424408s ******************
+*****************current image process time 	 924.3384203910828s ******************
+*****************current image process time 	 930.3844783306122s ******************
+*****************current image process time 	 936.3998639583588s ******************
+*****************current image process time 	 942.4497594833374s ******************
+*****************current image process time 	 948.5216789245605s ******************
+*****************current image process time 	 954.5445902347565s ******************
+*****************current image process time 	 960.6203203201294s ******************
+*****************current image process time 	 966.6353094577789s ******************
+*****************current image process time 	 972.6612396240234s ******************
+Evaluate Folders:  77688322
+*****************current image process time 	 988.3554599285126s ******************
+*****************current image process time 	 994.3334589004517s ******************
+*****************current image process time 	 1000.3260173797607s ******************
+*****************current image process time 	 1006.3603918552399s ******************
+*****************current image process time 	 1012.3533663749695s ******************
+*****************current image process time 	 1018.3557677268982s ******************
+*****************current image process time 	 1024.387112379074s ******************
+*****************current image process time 	 1030.378101825714s ******************
+*****************current image process time 	 1036.3727152347565s ******************
+*****************current image process time 	 1042.4086809158325s ******************
+Evaluate Folders:  84009993
+*****************current image process time 	 1058.1167607307434s ******************
+*****************current image process time 	 1064.2562029361725s ******************
+*****************current image process time 	 1070.3437056541443s ******************
+*****************current image process time 	 1076.4494183063507s ******************
+*****************current image process time 	 1082.577910900116s ******************
+*****************current image process time 	 1088.6746838092804s ******************
+*****************current image process time 	 1094.7794156074524s ******************
+*****************current image process time 	 1100.8917272090912s ******************
+*****************current image process time 	 1106.9903392791748s ******************
+*****************current image process time 	 1113.100396156311s ******************
+Evaluate Folders:  88753810
+*****************current image process time 	 1128.9011681079865s ******************
+*****************current image process time 	 1134.8849720954895s ******************
+*****************current image process time 	 1140.8741278648376s ******************
+*****************current image process time 	 1146.8719692230225s ******************
+*****************current image process time 	 1152.8493099212646s ******************
+*****************current image process time 	 1158.8380312919617s ******************
+*****************current image process time 	 1164.8340845108032s ******************
+*****************current image process time 	 1170.8310132026672s ******************
+*****************current image process time 	 1176.8421802520752s ******************
+*****************current image process time 	 1182.8500049114227s ******************
+Evaluate Folders:  90845958
+*****************current image process time 	 1198.7212510108948s ******************
+*****************current image process time 	 1204.73552942276s ******************
+*****************current image process time 	 1210.7429814338684s ******************
+*****************current image process time 	 1216.7900292873383s ******************
+*****************current image process time 	 1222.7947902679443s ******************
+*****************current image process time 	 1228.8191192150116s ******************
+*****************current image process time 	 1234.8896808624268s ******************
+*****************current image process time 	 1240.9058239459991s ******************
+*****************current image process time 	 1246.9293484687805s ******************
+*****************current image process time 	 1252.9842176437378s ******************
+Evaluate Folders:  95139444
+*****************current image process time 	 1268.501175403595s ******************
+*****************current image process time 	 1274.472774028778s ******************
+*****************current image process time 	 1280.4133083820343s ******************
+*****************current image process time 	 1286.4004962444305s ******************
+*****************current image process time 	 1292.4076347351074s ******************
+*****************current image process time 	 1298.3962922096252s ******************
+*****************current image process time 	 1304.3792009353638s ******************
+*****************current image process time 	 1310.3562157154083s ******************
+*****************current image process time 	 1316.3385500907898s ******************
+*****************current image process time 	 1322.319747686386s ******************
+Evaluate Folders:  95345919
+*****************current image process time 	 1338.0734157562256s ******************
+*****************current image process time 	 1344.082102060318s ******************
+*****************current image process time 	 1350.121042728424s ******************
+*****************current image process time 	 1356.1427450180054s ******************
+*****************current image process time 	 1362.1725113391876s ******************
+*****************current image process time 	 1368.1885027885437s ******************
+*****************current image process time 	 1374.209973335266s ******************
+*****************current image process time 	 1380.220841884613s ******************
+*****************current image process time 	 1386.262306213379s ******************
+*****************current image process time 	 1392.2729811668396s ******************

@@ -1,0 +1,5 @@
+export CUDA_VISIBLE_DEVICES=0,1
+OrderedDict([('pretrain_model_G', None), ('strict_load', True), ('resume_state', None), ('save_path', '/lustre/home/acct-eezy/eezy/4khdr/codes/experiments')])
+/lustre/home/acct-eezy/eezy/4khdr/codes/experiments/experiments/001_EDVRwoTSA_scratch_lr4e-4_600k_REDS_LrCAR4S_debug_test_by_wshen
+Disabled distributed training.
+Path already exists. Rename it to [/lustre/home/acct-eezy/eezy/4khdr/codes/experiments/experiments/001_EDVRwoTSA_scratch_lr4e-4_600k_REDS_LrCAR4S_debug_test_by_wshen_archived_191229-185225]

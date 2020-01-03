@@ -1,0 +1,862 @@
+cudnn(28):ERROR:105: Unable to locate a modulefile for 'cudnn/7.0.4'
+19-12-31 06:25:55.242 - INFO: Temporal augmentation interval list: [1], with random reverse is False.
+19-12-31 06:25:55.242 - INFO: Temporal augmentation interval list: [1], with random reverse is False.
+19-12-31 06:25:56.072 - INFO: Use YUV
+19-12-31 06:25:56.072 - INFO: Dataset [KESAIDataset - KESAI] is created.
+19-12-31 06:25:56.077 - INFO: Dataset [VideoTestDataset - REDS4] is created.
+19-12-31 06:25:56.080 - INFO: Use YUV
+19-12-31 06:25:56.080 - INFO: Dataset [KESAIDataset - KESAI] is created.
+19-12-31 06:25:56.085 - INFO: Dataset [VideoTestDataset - REDS4] is created.
+19-12-31 06:25:56.242 - INFO: Temporal augmentation interval list: [1], with random reverse is False.
+19-12-31 06:25:56.255 - INFO:   name: train_EDVR_L_Preload_use_hdr_as_input_yuv_parallel_L_1
+  use_tb_logger: True
+  model: video_base
+  distortion: sr
+  scale: 4
+  gpu_ids: [0, 1, 2, 3]
+  datasets:[
+    train:[
+      name: KESAI
+      mode: KESAI
+      interval_list: [1]
+      random_reverse: False
+      border_mode: False
+      dataroot_GT: /lustre/home/acct-eezy/eezy/4khdr/data/Dataset/train_4k
+      dataroot_LQ: /lustre/home/acct-eezy/eezy/4khdr/codes/HDRNet/logs/hdr_out_540p
+      data_type: img
+      N_frames: 5
+      use_shuffle: True
+      n_workers: 5
+      batch_size: 32
+      GT_size: 512
+      LQ_size: 128
+      use_flip: True
+      use_rot: True
+      color: YUV
+      phase: train
+      scale: 4
+    ]
+    val:[
+      name: REDS4
+      mode: video_test
+      stitch: False
+      dataroot_GT: /lustre/home/acct-eezy/eezy/4khdr/data/Dataset/wangshen_validate/gt
+      dataroot_LQ: /lustre/home/acct-eezy/eezy/4khdr/data/Dataset/wangshen_validate/input_LDR
+      use_all_folders: False
+      cache_data: False
+      N_frames: 5
+      padding: new_info
+      color: YUV
+      phase: val
+      scale: 4
+      data_type: img
+    ]
+  ]
+  network_G:[
+    which_model_G: EDVR
+    nf: 128
+    nframes: 5
+    groups: 8
+    front_RBs: 5
+    back_RBs: 40
+    predeblur: False
+    HR_in: False
+    w_TSA: True
+    scale: 4
+  ]
+  path:[
+    pretrain_model_G: /lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_yuv_parallel_L_0/models/0000_G.pth
+    save_path: /lustre/home/acct-eezy/eezy/4khdr/codes/
+    strict_load: True
+    resume_state: None
+    root: /lustre/home/acct-eezy/eezy/4khdr/codes/
+    experiments_root: /lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_yuv_parallel_L_1
+    models: /lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_yuv_parallel_L_1/models
+    training_state: /lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_yuv_parallel_L_1/training_state
+    log: /lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_yuv_parallel_L_1
+    val_log: /lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_yuv_parallel_L_1/val
+    val_images: /lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_yuv_parallel_L_1/val_images
+    train_images: /lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_yuv_parallel_L_1/train_images
+  ]
+  train:[
+    enable: True
+    lr_G: 0.0001
+    lr_scheme: ReduceLROnPlateau
+    beta1: 0.9
+    beta2: 0.99
+    factor: 0.2
+    patience: 1
+    epoch: 100
+    eta_min: 1e-07
+    warmup_iter: -1
+    pixel_criterion: cb
+    pixel_weight: 1.0
+    ssim_weight: 0.01
+    manual_seed: 0
+    T_period: [30000, 30000, 30000, 30000]
+    restarts: [30000, 60000, 90000]
+    restart_weights: [1, 1, 1]
+  ]
+  logger:[
+    print_freq: 10
+  ]
+  is_train: True
+  dist: True
+
+19-12-31 06:25:57.912 - INFO: Use YUV
+19-12-31 06:25:57.912 - INFO: Dataset [KESAIDataset - KESAI] is created.
+19-12-31 06:25:57.918 - INFO: Dataset [VideoTestDataset - REDS4] is created.
+19-12-31 06:26:10.366 - INFO: Random seed: 0
+19-12-31 06:26:10.373 - INFO: Temporal augmentation interval list: [1], with random reverse is False.
+19-12-31 06:26:11.081 - INFO: Use YUV
+19-12-31 06:26:11.081 - INFO: Dataset [KESAIDataset - KESAI] is created.
+19-12-31 06:26:11.081 - INFO: Number of train images: 69,700, iters: 2,179
+19-12-31 06:26:11.081 - INFO: Total epochs needed: 100 for iters 2,179
+19-12-31 06:26:11.086 - INFO: Dataset [VideoTestDataset - REDS4] is created.
+19-12-31 06:26:11.086 - INFO: Number of val images in [REDS4]: 100
+19-12-31 06:26:22.586 - INFO: Loading model for G [/lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_yuv_parallel_L_0/models/0000_G.pth] ...
+19-12-31 06:26:22.598 - INFO: Network G structure: DistributedDataParallel, with parameters: 20,633,827
+19-12-31 06:26:22.598 - INFO: EDVR(
+  (conv_first): Conv2d(3, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (feature_extraction): Sequential(
+    (0): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (1): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (2): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (3): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (4): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+  )
+  (fea_L2_conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+  (fea_L2_conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (fea_L3_conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+  (fea_L3_conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (pcd_align): PCD_Align(
+    (L3_offset_conv1): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (L3_offset_conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (L3_dcnpack): ModulatedDeformConvPack(
+      (conv_offset_mask): Conv2d(128, 216, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (L2_offset_conv1): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (L2_offset_conv2): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (L2_offset_conv3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (L2_dcnpack): ModulatedDeformConvPack(
+      (conv_offset_mask): Conv2d(128, 216, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (L2_fea_conv): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (L1_offset_conv1): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (L1_offset_conv2): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (L1_offset_conv3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (L1_dcnpack): ModulatedDeformConvPack(
+      (conv_offset_mask): Conv2d(128, 216, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (L1_fea_conv): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (cas_offset_conv1): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (cas_offset_conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (cas_dcnpack): ModulatedDeformConvPack(
+      (conv_offset_mask): Conv2d(128, 216, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (lrelu): LeakyReLU(negative_slope=0.1, inplace)
+  )
+  (tsa_fusion): TSA_Fusion(
+    (tAtt_1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (tAtt_2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (fea_fusion): Conv2d(640, 128, kernel_size=(1, 1), stride=(1, 1))
+    (sAtt_1): Conv2d(640, 128, kernel_size=(1, 1), stride=(1, 1))
+    (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+    (avgpool): AvgPool2d(kernel_size=3, stride=2, padding=1)
+    (sAtt_2): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+    (sAtt_3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (sAtt_4): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1))
+    (sAtt_5): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (sAtt_L1): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1))
+    (sAtt_L2): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (sAtt_L3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (sAtt_add_1): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1))
+    (sAtt_add_2): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1))
+    (lrelu): LeakyReLU(negative_slope=0.1, inplace)
+  )
+  (recon_trunk): Sequential(
+    (0): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (1): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (2): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (3): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (4): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (5): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (6): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (7): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (8): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (9): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (10): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (11): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (12): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (13): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (14): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (15): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (16): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (17): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (18): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (19): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (20): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (21): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (22): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (23): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (24): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (25): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (26): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (27): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (28): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (29): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (30): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (31): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (32): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (33): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (34): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (35): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (36): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (37): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (38): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (39): ResidualBlock_noBN(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+  )
+  (upconv1): Conv2d(128, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (upconv2): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (pixel_shuffle): PixelShuffle(upscale_factor=2)
+  (HRconv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (conv_last): Conv2d(64, 3, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (lrelu): LeakyReLU(negative_slope=0.1, inplace)
+)
+19-12-31 06:26:22.598 - INFO: Loading model for G [/lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_yuv_parallel_L_0/models/0000_G.pth] ...
+19-12-31 06:26:22.604 - INFO: Loading model for G [/lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_yuv_parallel_L_0/models/0000_G.pth] ...
+19-12-31 06:26:22.622 - INFO: Loading model for G [/lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_use_hdr_as_input_yuv_parallel_L_0/models/0000_G.pth] ...
+19-12-31 06:26:22.996 - INFO: Model [VideoBaseModel] is created.
+19-12-31 06:26:22.996 - INFO: Start training from epoch: 0, iter: 0
+19-12-31 06:26:23.032 - INFO: Model [VideoBaseModel] is created.
+19-12-31 06:26:23.032 - INFO: Start training from epoch: 0, iter: 0
+19-12-31 06:26:23.050 - INFO: Model [VideoBaseModel] is created.
+19-12-31 06:26:23.050 - INFO: Start training from epoch: 0, iter: 0
+19-12-31 06:26:23.063 - INFO: Model [VideoBaseModel] is created.
+19-12-31 06:26:23.063 - INFO: Start training from epoch: 0, iter: 0
+19-12-31 06:28:55.356 - INFO: [epoch:  0, iter:      10, lr:(1.000e-04,)] l_pix: 9.7198e-03  train_avg_loss: 1.1098e-02 yuv_psnr_inst : 32.24 psnr_inst : 26.88 yuv_psnr_avg : 37.12 psnr_avg : 31.56
+19-12-31 06:29:47.335 - INFO: [epoch:  0, iter:      20, lr:(1.000e-04,)] l_pix: 1.3808e-02  train_avg_loss: 1.1340e-02 yuv_psnr_inst : 35.87 psnr_inst : 30.21 yuv_psnr_avg : 35.44 psnr_avg : 29.83
+19-12-31 06:31:01.740 - INFO: [epoch:  0, iter:      30, lr:(1.000e-04,)] l_pix: 1.0158e-02  train_avg_loss: 1.1423e-02 yuv_psnr_inst : 38.52 psnr_inst : 32.92 yuv_psnr_avg : 36.08 psnr_avg : 30.52
+19-12-31 06:32:16.604 - INFO: [epoch:  0, iter:      40, lr:(1.000e-04,)] l_pix: 1.2027e-02  train_avg_loss: 1.1306e-02 yuv_psnr_inst : 34.54 psnr_inst : 28.96 yuv_psnr_avg : 36.12 psnr_avg : 30.53
+19-12-31 06:33:31.400 - INFO: [epoch:  0, iter:      50, lr:(1.000e-04,)] l_pix: 7.5531e-03  train_avg_loss: 1.0969e-02 yuv_psnr_inst : 39.94 psnr_inst : 34.19 yuv_psnr_avg : 36.54 psnr_avg : 30.96
+19-12-31 06:34:48.062 - INFO: [epoch:  0, iter:      60, lr:(1.000e-04,)] l_pix: 1.0632e-02  train_avg_loss: 1.0937e-02 yuv_psnr_inst : 33.22 psnr_inst : 27.70 yuv_psnr_avg : 36.50 psnr_avg : 30.93
+19-12-31 06:36:04.702 - INFO: [epoch:  0, iter:      70, lr:(1.000e-04,)] l_pix: 1.2280e-02  train_avg_loss: 1.0947e-02 yuv_psnr_inst : 32.92 psnr_inst : 27.34 yuv_psnr_avg : 36.37 psnr_avg : 30.79
+19-12-31 06:37:19.829 - INFO: [epoch:  0, iter:      80, lr:(1.000e-04,)] l_pix: 8.3523e-03  train_avg_loss: 1.0858e-02 yuv_psnr_inst : 43.27 psnr_inst : 37.70 yuv_psnr_avg : 36.28 psnr_avg : 30.69
+19-12-31 06:38:37.249 - INFO: [epoch:  0, iter:      90, lr:(1.000e-04,)] l_pix: 1.0086e-02  train_avg_loss: 1.0935e-02 yuv_psnr_inst : 42.54 psnr_inst : 36.83 yuv_psnr_avg : 36.35 psnr_avg : 30.76
+19-12-31 06:39:54.069 - INFO: [epoch:  0, iter:     100, lr:(1.000e-04,)] l_pix: 1.2537e-02  train_avg_loss: 1.1018e-02 yuv_psnr_inst : 35.46 psnr_inst : 29.80 yuv_psnr_avg : 36.23 psnr_avg : 30.63
+19-12-31 06:41:09.284 - INFO: [epoch:  0, iter:     110, lr:(1.000e-04,)] l_pix: 8.3977e-03  train_avg_loss: 1.0975e-02 yuv_psnr_inst : 38.64 psnr_inst : 33.42 yuv_psnr_avg : 36.44 psnr_avg : 30.83
+19-12-31 06:42:26.934 - INFO: [epoch:  0, iter:     120, lr:(1.000e-04,)] l_pix: 9.3084e-03  train_avg_loss: 1.0981e-02 yuv_psnr_inst : 37.65 psnr_inst : 32.01 yuv_psnr_avg : 36.52 psnr_avg : 30.93
+19-12-31 06:43:43.539 - INFO: [epoch:  0, iter:     130, lr:(1.000e-04,)] l_pix: 1.3153e-02  train_avg_loss: 1.0899e-02 yuv_psnr_inst : 33.28 psnr_inst : 27.53 yuv_psnr_avg : 36.63 psnr_avg : 31.03
+19-12-31 06:44:59.250 - INFO: [epoch:  0, iter:     140, lr:(1.000e-04,)] l_pix: 9.5408e-03  train_avg_loss: 1.0951e-02 yuv_psnr_inst : 34.55 psnr_inst : 28.13 yuv_psnr_avg : 36.50 psnr_avg : 30.90
+19-12-31 06:46:18.784 - INFO: [epoch:  0, iter:     150, lr:(1.000e-04,)] l_pix: 8.8567e-03  train_avg_loss: 1.0865e-02 yuv_psnr_inst : 41.57 psnr_inst : 35.40 yuv_psnr_avg : 36.47 psnr_avg : 30.85
+19-12-31 06:47:37.619 - INFO: [epoch:  0, iter:     160, lr:(1.000e-04,)] l_pix: 9.8026e-03  train_avg_loss: 1.0802e-02 yuv_psnr_inst : 34.21 psnr_inst : 28.92 yuv_psnr_avg : 36.57 psnr_avg : 30.95
+19-12-31 06:48:55.471 - INFO: [epoch:  0, iter:     170, lr:(1.000e-04,)] l_pix: 8.4242e-03  train_avg_loss: 1.0729e-02 yuv_psnr_inst : 26.04 psnr_inst : 20.56 yuv_psnr_avg : 36.52 psnr_avg : 30.91
+19-12-31 06:50:10.909 - INFO: [epoch:  0, iter:     180, lr:(1.000e-04,)] l_pix: 1.0339e-02  train_avg_loss: 1.0688e-02 yuv_psnr_inst : 36.60 psnr_inst : 32.15 yuv_psnr_avg : 36.60 psnr_avg : 31.01
+19-12-31 06:51:25.117 - INFO: [epoch:  0, iter:     190, lr:(1.000e-04,)] l_pix: 9.1722e-03  train_avg_loss: 1.0691e-02 yuv_psnr_inst : 47.47 psnr_inst : 41.57 yuv_psnr_avg : 36.62 psnr_avg : 31.02
+19-12-31 06:52:42.748 - INFO: [epoch:  0, iter:     200, lr:(1.000e-04,)] l_pix: 9.4399e-03  train_avg_loss: 1.0649e-02 yuv_psnr_inst : 34.66 psnr_inst : 29.12 yuv_psnr_avg : 36.70 psnr_avg : 31.10
+19-12-31 06:54:01.957 - INFO: [epoch:  0, iter:     210, lr:(1.000e-04,)] l_pix: 9.5267e-03  train_avg_loss: 1.0649e-02 yuv_psnr_inst : 39.49 psnr_inst : 34.41 yuv_psnr_avg : 36.76 psnr_avg : 31.15
+19-12-31 06:55:17.502 - INFO: [epoch:  0, iter:     220, lr:(1.000e-04,)] l_pix: 1.1847e-02  train_avg_loss: 1.0619e-02 yuv_psnr_inst : 42.89 psnr_inst : 37.17 yuv_psnr_avg : 36.88 psnr_avg : 31.28
+19-12-31 06:56:35.847 - INFO: [epoch:  0, iter:     230, lr:(1.000e-04,)] l_pix: 1.0276e-02  train_avg_loss: 1.0625e-02 yuv_psnr_inst : 43.66 psnr_inst : 38.18 yuv_psnr_avg : 36.81 psnr_avg : 31.20
+19-12-31 06:57:52.624 - INFO: [epoch:  0, iter:     240, lr:(1.000e-04,)] l_pix: 9.4651e-03  train_avg_loss: 1.0626e-02 yuv_psnr_inst : 41.26 psnr_inst : 35.21 yuv_psnr_avg : 36.88 psnr_avg : 31.27
+19-12-31 06:59:07.249 - INFO: [epoch:  0, iter:     250, lr:(1.000e-04,)] l_pix: 7.9677e-03  train_avg_loss: 1.0566e-02 yuv_psnr_inst : 41.01 psnr_inst : 35.15 yuv_psnr_avg : 36.98 psnr_avg : 31.36
+19-12-31 07:00:25.329 - INFO: [epoch:  0, iter:     260, lr:(1.000e-04,)] l_pix: 7.1278e-03  train_avg_loss: 1.0533e-02 yuv_psnr_inst : 35.76 psnr_inst : 29.69 yuv_psnr_avg : 36.98 psnr_avg : 31.37
+19-12-31 07:01:41.495 - INFO: [epoch:  0, iter:     270, lr:(1.000e-04,)] l_pix: 1.1165e-02  train_avg_loss: 1.0566e-02 yuv_psnr_inst : 39.81 psnr_inst : 34.10 yuv_psnr_avg : 36.92 psnr_avg : 31.31
+19-12-31 07:02:58.288 - INFO: [epoch:  0, iter:     280, lr:(1.000e-04,)] l_pix: 1.0601e-02  train_avg_loss: 1.0570e-02 yuv_psnr_inst : 36.70 psnr_inst : 31.32 yuv_psnr_avg : 36.94 psnr_avg : 31.33
+19-12-31 07:04:16.064 - INFO: [epoch:  0, iter:     290, lr:(1.000e-04,)] l_pix: 9.7764e-03  train_avg_loss: 1.0562e-02 yuv_psnr_inst : 37.78 psnr_inst : 31.29 yuv_psnr_avg : 36.92 psnr_avg : 31.30
+19-12-31 07:05:35.955 - INFO: [epoch:  0, iter:     300, lr:(1.000e-04,)] l_pix: 1.4518e-02  train_avg_loss: 1.0578e-02 yuv_psnr_inst : 37.96 psnr_inst : 31.88 yuv_psnr_avg : 36.90 psnr_avg : 31.27
+19-12-31 07:06:52.295 - INFO: [epoch:  0, iter:     310, lr:(1.000e-04,)] l_pix: 1.4071e-02  train_avg_loss: 1.0636e-02 yuv_psnr_inst : 31.70 psnr_inst : 25.73 yuv_psnr_avg : 36.88 psnr_avg : 31.25
+19-12-31 07:08:09.994 - INFO: [epoch:  0, iter:     320, lr:(1.000e-04,)] l_pix: 9.9412e-03  train_avg_loss: 1.0660e-02 yuv_psnr_inst : 33.14 psnr_inst : 27.23 yuv_psnr_avg : 36.75 psnr_avg : 31.11
+19-12-31 07:09:23.794 - INFO: [epoch:  0, iter:     330, lr:(1.000e-04,)] l_pix: 8.3637e-03  train_avg_loss: 1.0634e-02 yuv_psnr_inst : 45.32 psnr_inst : 38.97 yuv_psnr_avg : 36.87 psnr_avg : 31.24
+19-12-31 07:10:40.895 - INFO: [epoch:  0, iter:     340, lr:(1.000e-04,)] l_pix: 1.1799e-02  train_avg_loss: 1.0629e-02 yuv_psnr_inst : 35.29 psnr_inst : 29.55 yuv_psnr_avg : 36.87 psnr_avg : 31.23
+19-12-31 07:11:56.916 - INFO: [epoch:  0, iter:     350, lr:(1.000e-04,)] l_pix: 9.2578e-03  train_avg_loss: 1.0596e-02 yuv_psnr_inst : 43.73 psnr_inst : 37.97 yuv_psnr_avg : 36.90 psnr_avg : 31.26
+19-12-31 07:13:15.553 - INFO: [epoch:  0, iter:     360, lr:(1.000e-04,)] l_pix: 1.1056e-02  train_avg_loss: 1.0612e-02 yuv_psnr_inst : 35.78 psnr_inst : 30.56 yuv_psnr_avg : 36.87 psnr_avg : 31.24
+19-12-31 07:14:32.437 - INFO: [epoch:  0, iter:     370, lr:(1.000e-04,)] l_pix: 1.0308e-02  train_avg_loss: 1.0607e-02 yuv_psnr_inst : 32.61 psnr_inst : 26.78 yuv_psnr_avg : 36.81 psnr_avg : 31.17
+19-12-31 07:15:53.454 - INFO: [epoch:  0, iter:     380, lr:(1.000e-04,)] l_pix: 9.0077e-03  train_avg_loss: 1.0647e-02 yuv_psnr_inst : 37.82 psnr_inst : 31.29 yuv_psnr_avg : 36.80 psnr_avg : 31.16
+19-12-31 07:17:12.364 - INFO: [epoch:  0, iter:     390, lr:(1.000e-04,)] l_pix: 8.6913e-03  train_avg_loss: 1.0609e-02 yuv_psnr_inst : 31.44 psnr_inst : 26.06 yuv_psnr_avg : 36.85 psnr_avg : 31.21
+19-12-31 07:18:29.986 - INFO: [epoch:  0, iter:     400, lr:(1.000e-04,)] l_pix: 8.6290e-03  train_avg_loss: 1.0608e-02 yuv_psnr_inst : 30.43 psnr_inst : 24.40 yuv_psnr_avg : 36.85 psnr_avg : 31.22
+19-12-31 07:19:47.387 - INFO: [epoch:  0, iter:     410, lr:(1.000e-04,)] l_pix: 6.6488e-03  train_avg_loss: 1.0613e-02 yuv_psnr_inst : 37.04 psnr_inst : 31.20 yuv_psnr_avg : 36.86 psnr_avg : 31.22
+19-12-31 07:21:06.622 - INFO: [epoch:  0, iter:     420, lr:(1.000e-04,)] l_pix: 6.9633e-03  train_avg_loss: 1.0620e-02 yuv_psnr_inst : 40.44 psnr_inst : 34.91 yuv_psnr_avg : 36.80 psnr_avg : 31.16
+19-12-31 07:22:21.772 - INFO: [epoch:  0, iter:     430, lr:(1.000e-04,)] l_pix: 1.0111e-02  train_avg_loss: 1.0624e-02 yuv_psnr_inst : 39.18 psnr_inst : 33.91 yuv_psnr_avg : 36.84 psnr_avg : 31.20
+19-12-31 07:23:41.125 - INFO: [epoch:  0, iter:     440, lr:(1.000e-04,)] l_pix: 2.2310e-02  train_avg_loss: 1.0650e-02 yuv_psnr_inst : 39.27 psnr_inst : 33.82 yuv_psnr_avg : 36.86 psnr_avg : 31.22
+19-12-31 07:24:57.260 - INFO: [epoch:  0, iter:     450, lr:(1.000e-04,)] l_pix: 1.0097e-02  train_avg_loss: 1.0632e-02 yuv_psnr_inst : 38.53 psnr_inst : 32.69 yuv_psnr_avg : 36.85 psnr_avg : 31.21
+19-12-31 07:26:14.255 - INFO: [epoch:  0, iter:     460, lr:(1.000e-04,)] l_pix: 1.1171e-02  train_avg_loss: 1.0608e-02 yuv_psnr_inst : 35.45 psnr_inst : 29.79 yuv_psnr_avg : 36.86 psnr_avg : 31.22
+19-12-31 07:27:33.154 - INFO: [epoch:  0, iter:     470, lr:(1.000e-04,)] l_pix: 1.0026e-02  train_avg_loss: 1.0600e-02 yuv_psnr_inst : 42.38 psnr_inst : 36.84 yuv_psnr_avg : 36.86 psnr_avg : 31.22
+19-12-31 07:28:48.167 - INFO: [epoch:  0, iter:     480, lr:(1.000e-04,)] l_pix: 1.1050e-02  train_avg_loss: 1.0594e-02 yuv_psnr_inst : 41.69 psnr_inst : 36.45 yuv_psnr_avg : 36.92 psnr_avg : 31.28
+19-12-31 07:30:06.819 - INFO: [epoch:  0, iter:     490, lr:(1.000e-04,)] l_pix: 1.0688e-02  train_avg_loss: 1.0574e-02 yuv_psnr_inst : 32.99 psnr_inst : 26.58 yuv_psnr_avg : 36.91 psnr_avg : 31.27
+19-12-31 07:31:26.006 - INFO: [epoch:  0, iter:     500, lr:(1.000e-04,)] l_pix: 1.2865e-02  train_avg_loss: 1.0593e-02 yuv_psnr_inst : 31.43 psnr_inst : 25.05 yuv_psnr_avg : 36.91 psnr_avg : 31.26
+19-12-31 07:32:40.583 - INFO: [epoch:  0, iter:     510, lr:(1.000e-04,)] l_pix: 9.4743e-03  train_avg_loss: 1.0602e-02 yuv_psnr_inst : 38.41 psnr_inst : 32.70 yuv_psnr_avg : 36.87 psnr_avg : 31.22
+19-12-31 07:33:59.825 - INFO: [epoch:  0, iter:     520, lr:(1.000e-04,)] l_pix: 8.9258e-03  train_avg_loss: 1.0613e-02 yuv_psnr_inst : 36.25 psnr_inst : 30.04 yuv_psnr_avg : 36.87 psnr_avg : 31.22
+19-12-31 07:35:13.314 - INFO: [epoch:  0, iter:     530, lr:(1.000e-04,)] l_pix: 1.2623e-02  train_avg_loss: 1.0598e-02 yuv_psnr_inst : 27.97 psnr_inst : 23.25 yuv_psnr_avg : 36.88 psnr_avg : 31.23
+19-12-31 07:36:32.352 - INFO: [epoch:  0, iter:     540, lr:(1.000e-04,)] l_pix: 1.2098e-02  train_avg_loss: 1.0606e-02 yuv_psnr_inst : 44.94 psnr_inst : 39.68 yuv_psnr_avg : 36.90 psnr_avg : 31.25
+19-12-31 07:37:51.023 - INFO: [epoch:  0, iter:     550, lr:(1.000e-04,)] l_pix: 1.0996e-02  train_avg_loss: 1.0628e-02 yuv_psnr_inst : 43.11 psnr_inst : 37.12 yuv_psnr_avg : 36.92 psnr_avg : 31.27
+19-12-31 07:39:04.770 - INFO: [epoch:  0, iter:     560, lr:(1.000e-04,)] l_pix: 1.3239e-02  train_avg_loss: 1.0649e-02 yuv_psnr_inst : 29.58 psnr_inst : 25.01 yuv_psnr_avg : 36.91 psnr_avg : 31.26
+19-12-31 07:40:18.511 - INFO: [epoch:  0, iter:     570, lr:(1.000e-04,)] l_pix: 8.4018e-03  train_avg_loss: 1.0639e-02 yuv_psnr_inst : 35.74 psnr_inst : 29.75 yuv_psnr_avg : 36.93 psnr_avg : 31.27
+19-12-31 07:41:33.679 - INFO: [epoch:  0, iter:     580, lr:(1.000e-04,)] l_pix: 1.1887e-02  train_avg_loss: 1.0642e-02 yuv_psnr_inst : 43.53 psnr_inst : 38.09 yuv_psnr_avg : 36.94 psnr_avg : 31.29
+19-12-31 07:42:50.944 - INFO: [epoch:  0, iter:     590, lr:(1.000e-04,)] l_pix: 9.5257e-03  train_avg_loss: 1.0632e-02 yuv_psnr_inst : 40.24 psnr_inst : 34.90 yuv_psnr_avg : 36.92 psnr_avg : 31.26
+19-12-31 07:44:08.567 - INFO: [epoch:  0, iter:     600, lr:(1.000e-04,)] l_pix: 1.1006e-02  train_avg_loss: 1.0626e-02 yuv_psnr_inst : 34.90 psnr_inst : 29.18 yuv_psnr_avg : 36.88 psnr_avg : 31.23
+19-12-31 07:45:26.923 - INFO: [epoch:  0, iter:     610, lr:(1.000e-04,)] l_pix: 1.2763e-02  train_avg_loss: 1.0629e-02 yuv_psnr_inst : 35.57 psnr_inst : 30.25 yuv_psnr_avg : 36.90 psnr_avg : 31.25
+19-12-31 07:46:42.841 - INFO: [epoch:  0, iter:     620, lr:(1.000e-04,)] l_pix: 8.7795e-03  train_avg_loss: 1.0629e-02 yuv_psnr_inst : 47.22 psnr_inst : 41.64 yuv_psnr_avg : 36.90 psnr_avg : 31.25
+19-12-31 07:47:59.713 - INFO: [epoch:  0, iter:     630, lr:(1.000e-04,)] l_pix: 1.2095e-02  train_avg_loss: 1.0641e-02 yuv_psnr_inst : 35.82 psnr_inst : 31.10 yuv_psnr_avg : 36.90 psnr_avg : 31.25
+19-12-31 07:49:14.663 - INFO: [epoch:  0, iter:     640, lr:(1.000e-04,)] l_pix: 1.1676e-02  train_avg_loss: 1.0658e-02 yuv_psnr_inst : 47.21 psnr_inst : 41.77 yuv_psnr_avg : 36.86 psnr_avg : 31.22
+19-12-31 07:50:30.852 - INFO: [epoch:  0, iter:     650, lr:(1.000e-04,)] l_pix: 1.0372e-02  train_avg_loss: 1.0659e-02 yuv_psnr_inst : 36.21 psnr_inst : 30.69 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 07:51:44.588 - INFO: [epoch:  0, iter:     660, lr:(1.000e-04,)] l_pix: 1.1325e-02  train_avg_loss: 1.0652e-02 yuv_psnr_inst : 36.34 psnr_inst : 30.41 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 07:53:00.942 - INFO: [epoch:  0, iter:     670, lr:(1.000e-04,)] l_pix: 9.3241e-03  train_avg_loss: 1.0646e-02 yuv_psnr_inst : 43.16 psnr_inst : 37.75 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 07:54:14.862 - INFO: [epoch:  0, iter:     680, lr:(1.000e-04,)] l_pix: 9.4017e-03  train_avg_loss: 1.0659e-02 yuv_psnr_inst : 34.01 psnr_inst : 28.41 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 07:55:29.916 - INFO: [epoch:  0, iter:     690, lr:(1.000e-04,)] l_pix: 1.2062e-02  train_avg_loss: 1.0660e-02 yuv_psnr_inst : 34.79 psnr_inst : 30.42 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 07:56:45.401 - INFO: [epoch:  0, iter:     700, lr:(1.000e-04,)] l_pix: 1.0579e-02  train_avg_loss: 1.0676e-02 yuv_psnr_inst : 38.10 psnr_inst : 31.94 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 07:58:00.320 - INFO: [epoch:  0, iter:     710, lr:(1.000e-04,)] l_pix: 9.6707e-03  train_avg_loss: 1.0698e-02 yuv_psnr_inst : 40.63 psnr_inst : 35.61 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 07:59:16.417 - INFO: [epoch:  0, iter:     720, lr:(1.000e-04,)] l_pix: 1.2135e-02  train_avg_loss: 1.0697e-02 yuv_psnr_inst : 30.57 psnr_inst : 24.71 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:00:30.063 - INFO: [epoch:  0, iter:     730, lr:(1.000e-04,)] l_pix: 9.0247e-03  train_avg_loss: 1.0685e-02 yuv_psnr_inst : 37.30 psnr_inst : 31.96 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:01:41.786 - INFO: [epoch:  0, iter:     740, lr:(1.000e-04,)] l_pix: 1.2770e-02  train_avg_loss: 1.0692e-02 yuv_psnr_inst : 35.70 psnr_inst : 29.91 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:02:57.511 - INFO: [epoch:  0, iter:     750, lr:(1.000e-04,)] l_pix: 1.1780e-02  train_avg_loss: 1.0691e-02 yuv_psnr_inst : 34.31 psnr_inst : 28.49 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:04:13.083 - INFO: [epoch:  0, iter:     760, lr:(1.000e-04,)] l_pix: 1.1824e-02  train_avg_loss: 1.0692e-02 yuv_psnr_inst : 30.17 psnr_inst : 24.44 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:05:28.117 - INFO: [epoch:  0, iter:     770, lr:(1.000e-04,)] l_pix: 1.1222e-02  train_avg_loss: 1.0695e-02 yuv_psnr_inst : 38.54 psnr_inst : 33.06 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:06:42.584 - INFO: [epoch:  0, iter:     780, lr:(1.000e-04,)] l_pix: 1.2506e-02  train_avg_loss: 1.0687e-02 yuv_psnr_inst : 35.89 psnr_inst : 29.35 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:07:58.720 - INFO: [epoch:  0, iter:     790, lr:(1.000e-04,)] l_pix: 6.5699e-03  train_avg_loss: 1.0678e-02 yuv_psnr_inst : 44.45 psnr_inst : 39.45 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:09:14.790 - INFO: [epoch:  0, iter:     800, lr:(1.000e-04,)] l_pix: 1.2155e-02  train_avg_loss: 1.0689e-02 yuv_psnr_inst : 43.75 psnr_inst : 37.72 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:10:29.389 - INFO: [epoch:  0, iter:     810, lr:(1.000e-04,)] l_pix: 1.1813e-02  train_avg_loss: 1.0684e-02 yuv_psnr_inst : 37.40 psnr_inst : 32.22 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:11:45.611 - INFO: [epoch:  0, iter:     820, lr:(1.000e-04,)] l_pix: 1.0983e-02  train_avg_loss: 1.0679e-02 yuv_psnr_inst : 37.22 psnr_inst : 31.64 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:13:01.405 - INFO: [epoch:  0, iter:     830, lr:(1.000e-04,)] l_pix: 1.0185e-02  train_avg_loss: 1.0679e-02 yuv_psnr_inst : 38.90 psnr_inst : 32.77 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:14:14.550 - INFO: [epoch:  0, iter:     840, lr:(1.000e-04,)] l_pix: 9.9085e-03  train_avg_loss: 1.0680e-02 yuv_psnr_inst : 38.01 psnr_inst : 32.16 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:15:29.172 - INFO: [epoch:  0, iter:     850, lr:(1.000e-04,)] l_pix: 8.7447e-03  train_avg_loss: 1.0670e-02 yuv_psnr_inst : 40.89 psnr_inst : 35.13 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:16:44.372 - INFO: [epoch:  0, iter:     860, lr:(1.000e-04,)] l_pix: 1.0299e-02  train_avg_loss: 1.0684e-02 yuv_psnr_inst : 42.23 psnr_inst : 36.27 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:17:57.066 - INFO: [epoch:  0, iter:     870, lr:(1.000e-04,)] l_pix: 1.1656e-02  train_avg_loss: 1.0695e-02 yuv_psnr_inst : 29.16 psnr_inst : 23.89 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:19:13.819 - INFO: [epoch:  0, iter:     880, lr:(1.000e-04,)] l_pix: 1.4634e-02  train_avg_loss: 1.0701e-02 yuv_psnr_inst : 33.30 psnr_inst : 28.03 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:20:29.020 - INFO: [epoch:  0, iter:     890, lr:(1.000e-04,)] l_pix: 9.8666e-03  train_avg_loss: 1.0703e-02 yuv_psnr_inst : 30.93 psnr_inst : 25.12 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:21:45.695 - INFO: [epoch:  0, iter:     900, lr:(1.000e-04,)] l_pix: 6.7586e-03  train_avg_loss: 1.0709e-02 yuv_psnr_inst : 42.56 psnr_inst : 36.60 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:23:01.144 - INFO: [epoch:  0, iter:     910, lr:(1.000e-04,)] l_pix: 1.2018e-02  train_avg_loss: 1.0708e-02 yuv_psnr_inst : 39.03 psnr_inst : 33.12 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:24:18.167 - INFO: [epoch:  0, iter:     920, lr:(1.000e-04,)] l_pix: 8.2905e-03  train_avg_loss: 1.0713e-02 yuv_psnr_inst : 38.24 psnr_inst : 32.36 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:25:32.363 - INFO: [epoch:  0, iter:     930, lr:(1.000e-04,)] l_pix: 1.1168e-02  train_avg_loss: 1.0725e-02 yuv_psnr_inst : 35.55 psnr_inst : 29.30 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:26:46.986 - INFO: [epoch:  0, iter:     940, lr:(1.000e-04,)] l_pix: 9.3100e-03  train_avg_loss: 1.0727e-02 yuv_psnr_inst : 35.19 psnr_inst : 29.88 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:27:59.918 - INFO: [epoch:  0, iter:     950, lr:(1.000e-04,)] l_pix: 8.1954e-03  train_avg_loss: 1.0733e-02 yuv_psnr_inst : 34.30 psnr_inst : 28.61 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:29:16.220 - INFO: [epoch:  0, iter:     960, lr:(1.000e-04,)] l_pix: 1.1309e-02  train_avg_loss: 1.0745e-02 yuv_psnr_inst : 40.52 psnr_inst : 34.97 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:30:29.266 - INFO: [epoch:  0, iter:     970, lr:(1.000e-04,)] l_pix: 7.4230e-03  train_avg_loss: 1.0740e-02 yuv_psnr_inst : 36.19 psnr_inst : 30.98 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:31:45.573 - INFO: [epoch:  0, iter:     980, lr:(1.000e-04,)] l_pix: 1.1125e-02  train_avg_loss: 1.0752e-02 yuv_psnr_inst : 36.44 psnr_inst : 30.51 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:33:00.397 - INFO: [epoch:  0, iter:     990, lr:(1.000e-04,)] l_pix: 9.3413e-03  train_avg_loss: 1.0739e-02 yuv_psnr_inst : 35.88 psnr_inst : 29.85 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:34:15.830 - INFO: [epoch:  0, iter:   1,000, lr:(1.000e-04,)] l_pix: 1.1172e-02  train_avg_loss: 1.0728e-02 yuv_psnr_inst : 42.87 psnr_inst : 37.28 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:35:32.609 - INFO: [epoch:  0, iter:   1,010, lr:(1.000e-04,)] l_pix: 9.7221e-03  train_avg_loss: 1.0730e-02 yuv_psnr_inst : 37.62 psnr_inst : 32.06 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:36:48.294 - INFO: [epoch:  0, iter:   1,020, lr:(1.000e-04,)] l_pix: 8.7172e-03  train_avg_loss: 1.0732e-02 yuv_psnr_inst : 35.60 psnr_inst : 31.19 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:38:03.131 - INFO: [epoch:  0, iter:   1,030, lr:(1.000e-04,)] l_pix: 1.1615e-02  train_avg_loss: 1.0732e-02 yuv_psnr_inst : 35.45 psnr_inst : 29.96 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:39:17.439 - INFO: [epoch:  0, iter:   1,040, lr:(1.000e-04,)] l_pix: 1.0878e-02  train_avg_loss: 1.0746e-02 yuv_psnr_inst : 42.75 psnr_inst : 36.74 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:40:31.739 - INFO: [epoch:  0, iter:   1,050, lr:(1.000e-04,)] l_pix: 8.1030e-03  train_avg_loss: 1.0750e-02 yuv_psnr_inst : 40.70 psnr_inst : 35.77 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:41:48.497 - INFO: [epoch:  0, iter:   1,060, lr:(1.000e-04,)] l_pix: 7.5750e-03  train_avg_loss: 1.0752e-02 yuv_psnr_inst : 39.63 psnr_inst : 33.90 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:43:04.766 - INFO: [epoch:  0, iter:   1,070, lr:(1.000e-04,)] l_pix: 9.4448e-03  train_avg_loss: 1.0747e-02 yuv_psnr_inst : 39.90 psnr_inst : 34.73 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:44:18.297 - INFO: [epoch:  0, iter:   1,080, lr:(1.000e-04,)] l_pix: 1.1931e-02  train_avg_loss: 1.0736e-02 yuv_psnr_inst : 30.36 psnr_inst : 25.66 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:45:33.895 - INFO: [epoch:  0, iter:   1,090, lr:(1.000e-04,)] l_pix: 1.1566e-02  train_avg_loss: 1.0739e-02 yuv_psnr_inst : 44.53 psnr_inst : 38.95 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:46:47.354 - INFO: [epoch:  0, iter:   1,100, lr:(1.000e-04,)] l_pix: 1.4344e-02  train_avg_loss: 1.0753e-02 yuv_psnr_inst : 36.96 psnr_inst : 31.28 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:48:04.003 - INFO: [epoch:  0, iter:   1,110, lr:(1.000e-04,)] l_pix: 7.9724e-03  train_avg_loss: 1.0765e-02 yuv_psnr_inst : 43.60 psnr_inst : 37.51 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:49:19.583 - INFO: [epoch:  0, iter:   1,120, lr:(1.000e-04,)] l_pix: 1.2056e-02  train_avg_loss: 1.0770e-02 yuv_psnr_inst : 34.44 psnr_inst : 28.85 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:50:37.000 - INFO: [epoch:  0, iter:   1,130, lr:(1.000e-04,)] l_pix: 9.0528e-03  train_avg_loss: 1.0769e-02 yuv_psnr_inst : 42.33 psnr_inst : 36.26 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:51:48.916 - INFO: [epoch:  0, iter:   1,140, lr:(1.000e-04,)] l_pix: 1.0350e-02  train_avg_loss: 1.0766e-02 yuv_psnr_inst : 41.52 psnr_inst : 35.41 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:53:04.709 - INFO: [epoch:  0, iter:   1,150, lr:(1.000e-04,)] l_pix: 1.1440e-02  train_avg_loss: 1.0774e-02 yuv_psnr_inst : 30.61 psnr_inst : 25.65 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:54:20.403 - INFO: [epoch:  0, iter:   1,160, lr:(1.000e-04,)] l_pix: 1.0428e-02  train_avg_loss: 1.0765e-02 yuv_psnr_inst : 32.87 psnr_inst : 27.23 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:55:32.948 - INFO: [epoch:  0, iter:   1,170, lr:(1.000e-04,)] l_pix: 1.0161e-02  train_avg_loss: 1.0765e-02 yuv_psnr_inst : 35.99 psnr_inst : 30.15 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:56:51.556 - INFO: [epoch:  0, iter:   1,180, lr:(1.000e-04,)] l_pix: 9.5372e-03  train_avg_loss: 1.0767e-02 yuv_psnr_inst : 35.90 psnr_inst : 29.99 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:58:07.964 - INFO: [epoch:  0, iter:   1,190, lr:(1.000e-04,)] l_pix: 1.4601e-02  train_avg_loss: 1.0765e-02 yuv_psnr_inst : 32.65 psnr_inst : 26.58 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 08:59:22.784 - INFO: [epoch:  0, iter:   1,200, lr:(1.000e-04,)] l_pix: 1.3371e-02  train_avg_loss: 1.0764e-02 yuv_psnr_inst : 35.96 psnr_inst : 30.80 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:00:38.030 - INFO: [epoch:  0, iter:   1,210, lr:(1.000e-04,)] l_pix: 9.5960e-03  train_avg_loss: 1.0762e-02 yuv_psnr_inst : 36.61 psnr_inst : 30.55 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:01:53.335 - INFO: [epoch:  0, iter:   1,220, lr:(1.000e-04,)] l_pix: 1.2352e-02  train_avg_loss: 1.0763e-02 yuv_psnr_inst : 34.59 psnr_inst : 28.32 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:03:06.469 - INFO: [epoch:  0, iter:   1,230, lr:(1.000e-04,)] l_pix: 1.2041e-02  train_avg_loss: 1.0760e-02 yuv_psnr_inst : 37.57 psnr_inst : 32.03 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:04:22.454 - INFO: [epoch:  0, iter:   1,240, lr:(1.000e-04,)] l_pix: 1.2809e-02  train_avg_loss: 1.0769e-02 yuv_psnr_inst : 33.21 psnr_inst : 27.60 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:05:37.606 - INFO: [epoch:  0, iter:   1,250, lr:(1.000e-04,)] l_pix: 1.0298e-02  train_avg_loss: 1.0761e-02 yuv_psnr_inst : 34.58 psnr_inst : 28.61 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:06:54.531 - INFO: [epoch:  0, iter:   1,260, lr:(1.000e-04,)] l_pix: 1.1330e-02  train_avg_loss: 1.0760e-02 yuv_psnr_inst : 36.22 psnr_inst : 30.54 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:08:08.841 - INFO: [epoch:  0, iter:   1,270, lr:(1.000e-04,)] l_pix: 1.6670e-02  train_avg_loss: 1.0768e-02 yuv_psnr_inst : 32.58 psnr_inst : 27.23 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:09:24.768 - INFO: [epoch:  0, iter:   1,280, lr:(1.000e-04,)] l_pix: 1.0431e-02  train_avg_loss: 1.0767e-02 yuv_psnr_inst : 30.11 psnr_inst : 24.71 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:10:37.111 - INFO: [epoch:  0, iter:   1,290, lr:(1.000e-04,)] l_pix: 1.0426e-02  train_avg_loss: 1.0771e-02 yuv_psnr_inst : 33.77 psnr_inst : 27.92 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:11:55.422 - INFO: [epoch:  0, iter:   1,300, lr:(1.000e-04,)] l_pix: 1.2724e-02  train_avg_loss: 1.0774e-02 yuv_psnr_inst : 34.76 psnr_inst : 29.63 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:13:11.937 - INFO: [epoch:  0, iter:   1,310, lr:(1.000e-04,)] l_pix: 9.3417e-03  train_avg_loss: 1.0770e-02 yuv_psnr_inst : 40.54 psnr_inst : 35.58 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:14:27.002 - INFO: [epoch:  0, iter:   1,320, lr:(1.000e-04,)] l_pix: 8.7578e-03  train_avg_loss: 1.0768e-02 yuv_psnr_inst : 36.70 psnr_inst : 30.80 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:15:40.782 - INFO: [epoch:  0, iter:   1,330, lr:(1.000e-04,)] l_pix: 1.2211e-02  train_avg_loss: 1.0761e-02 yuv_psnr_inst : 29.57 psnr_inst : 23.60 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:16:53.621 - INFO: [epoch:  0, iter:   1,340, lr:(1.000e-04,)] l_pix: 7.9502e-03  train_avg_loss: 1.0757e-02 yuv_psnr_inst : 40.75 psnr_inst : 35.05 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:18:09.153 - INFO: [epoch:  0, iter:   1,350, lr:(1.000e-04,)] l_pix: 1.1600e-02  train_avg_loss: 1.0764e-02 yuv_psnr_inst : 38.28 psnr_inst : 33.07 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:19:23.544 - INFO: [epoch:  0, iter:   1,360, lr:(1.000e-04,)] l_pix: 1.6158e-02  train_avg_loss: 1.0768e-02 yuv_psnr_inst : 38.58 psnr_inst : 33.66 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:20:39.287 - INFO: [epoch:  0, iter:   1,370, lr:(1.000e-04,)] l_pix: 1.0537e-02  train_avg_loss: 1.0781e-02 yuv_psnr_inst : 36.93 psnr_inst : 30.74 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:21:52.552 - INFO: [epoch:  0, iter:   1,380, lr:(1.000e-04,)] l_pix: 9.7166e-03  train_avg_loss: 1.0777e-02 yuv_psnr_inst : 38.68 psnr_inst : 33.16 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:23:07.630 - INFO: [epoch:  0, iter:   1,390, lr:(1.000e-04,)] l_pix: 1.1793e-02  train_avg_loss: 1.0781e-02 yuv_psnr_inst : 34.48 psnr_inst : 28.48 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:24:22.756 - INFO: [epoch:  0, iter:   1,400, lr:(1.000e-04,)] l_pix: 9.1810e-03  train_avg_loss: 1.0771e-02 yuv_psnr_inst : 33.19 psnr_inst : 27.21 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:25:39.432 - INFO: [epoch:  0, iter:   1,410, lr:(1.000e-04,)] l_pix: 8.9747e-03  train_avg_loss: 1.0780e-02 yuv_psnr_inst : 43.06 psnr_inst : 36.83 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:26:56.010 - INFO: [epoch:  0, iter:   1,420, lr:(1.000e-04,)] l_pix: 1.1924e-02  train_avg_loss: 1.0785e-02 yuv_psnr_inst : 45.84 psnr_inst : 40.23 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:28:11.178 - INFO: [epoch:  0, iter:   1,430, lr:(1.000e-04,)] l_pix: 9.7339e-03  train_avg_loss: 1.0779e-02 yuv_psnr_inst : 38.63 psnr_inst : 33.07 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:29:26.203 - INFO: [epoch:  0, iter:   1,440, lr:(1.000e-04,)] l_pix: 1.2333e-02  train_avg_loss: 1.0781e-02 yuv_psnr_inst : 42.43 psnr_inst : 36.88 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:30:42.518 - INFO: [epoch:  0, iter:   1,450, lr:(1.000e-04,)] l_pix: 1.0576e-02  train_avg_loss: 1.0776e-02 yuv_psnr_inst : 41.84 psnr_inst : 36.54 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:31:54.615 - INFO: [epoch:  0, iter:   1,460, lr:(1.000e-04,)] l_pix: 1.1311e-02  train_avg_loss: 1.0773e-02 yuv_psnr_inst : 40.19 psnr_inst : 34.48 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:33:10.462 - INFO: [epoch:  0, iter:   1,470, lr:(1.000e-04,)] l_pix: 9.3980e-03  train_avg_loss: 1.0775e-02 yuv_psnr_inst : 37.46 psnr_inst : 32.07 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:34:24.687 - INFO: [epoch:  0, iter:   1,480, lr:(1.000e-04,)] l_pix: 1.5315e-02  train_avg_loss: 1.0783e-02 yuv_psnr_inst : 31.91 psnr_inst : 27.02 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:35:38.777 - INFO: [epoch:  0, iter:   1,490, lr:(1.000e-04,)] l_pix: 8.1199e-03  train_avg_loss: 1.0780e-02 yuv_psnr_inst : 33.60 psnr_inst : 28.06 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:36:53.940 - INFO: [epoch:  0, iter:   1,500, lr:(1.000e-04,)] l_pix: 8.6733e-03  train_avg_loss: 1.0779e-02 yuv_psnr_inst : 40.18 psnr_inst : 34.39 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:38:10.074 - INFO: [epoch:  0, iter:   1,510, lr:(1.000e-04,)] l_pix: 8.9074e-03  train_avg_loss: 1.0778e-02 yuv_psnr_inst : 36.84 psnr_inst : 31.45 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:39:27.339 - INFO: [epoch:  0, iter:   1,520, lr:(1.000e-04,)] l_pix: 1.0271e-02  train_avg_loss: 1.0782e-02 yuv_psnr_inst : 35.49 psnr_inst : 30.00 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:40:43.814 - INFO: [epoch:  0, iter:   1,530, lr:(1.000e-04,)] l_pix: 1.0926e-02  train_avg_loss: 1.0781e-02 yuv_psnr_inst : 35.06 psnr_inst : 29.73 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:42:01.198 - INFO: [epoch:  0, iter:   1,540, lr:(1.000e-04,)] l_pix: 1.0503e-02  train_avg_loss: 1.0783e-02 yuv_psnr_inst : 35.93 psnr_inst : 31.10 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:43:14.728 - INFO: [epoch:  0, iter:   1,550, lr:(1.000e-04,)] l_pix: 1.4552e-02  train_avg_loss: 1.0791e-02 yuv_psnr_inst : 36.83 psnr_inst : 30.84 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:44:29.318 - INFO: [epoch:  0, iter:   1,560, lr:(1.000e-04,)] l_pix: 1.0409e-02  train_avg_loss: 1.0792e-02 yuv_psnr_inst : 27.81 psnr_inst : 22.91 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:45:40.845 - INFO: [epoch:  0, iter:   1,570, lr:(1.000e-04,)] l_pix: 9.4650e-03  train_avg_loss: 1.0793e-02 yuv_psnr_inst : 31.78 psnr_inst : 25.93 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:46:57.675 - INFO: [epoch:  0, iter:   1,580, lr:(1.000e-04,)] l_pix: 9.0410e-03  train_avg_loss: 1.0795e-02 yuv_psnr_inst : 37.29 psnr_inst : 32.20 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:48:11.407 - INFO: [epoch:  0, iter:   1,590, lr:(1.000e-04,)] l_pix: 8.0185e-03  train_avg_loss: 1.0789e-02 yuv_psnr_inst : 38.28 psnr_inst : 32.78 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:49:26.610 - INFO: [epoch:  0, iter:   1,600, lr:(1.000e-04,)] l_pix: 1.3159e-02  train_avg_loss: 1.0791e-02 yuv_psnr_inst : 30.55 psnr_inst : 24.89 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:50:42.228 - INFO: [epoch:  0, iter:   1,610, lr:(1.000e-04,)] l_pix: 1.4738e-02  train_avg_loss: 1.0795e-02 yuv_psnr_inst : 36.22 psnr_inst : 30.30 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:51:58.307 - INFO: [epoch:  0, iter:   1,620, lr:(1.000e-04,)] l_pix: 1.0103e-02  train_avg_loss: 1.0796e-02 yuv_psnr_inst : 32.55 psnr_inst : 26.88 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:53:16.484 - INFO: [epoch:  0, iter:   1,630, lr:(1.000e-04,)] l_pix: 1.0295e-02  train_avg_loss: 1.0794e-02 yuv_psnr_inst : 37.61 psnr_inst : 31.20 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:54:31.178 - INFO: [epoch:  0, iter:   1,640, lr:(1.000e-04,)] l_pix: 1.2020e-02  train_avg_loss: 1.0796e-02 yuv_psnr_inst : 38.82 psnr_inst : 33.05 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:55:45.279 - INFO: [epoch:  0, iter:   1,650, lr:(1.000e-04,)] l_pix: 9.6493e-03  train_avg_loss: 1.0796e-02 yuv_psnr_inst : 36.91 psnr_inst : 31.84 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:56:59.449 - INFO: [epoch:  0, iter:   1,660, lr:(1.000e-04,)] l_pix: 1.1942e-02  train_avg_loss: 1.0797e-02 yuv_psnr_inst : 46.55 psnr_inst : 40.04 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:58:15.437 - INFO: [epoch:  0, iter:   1,670, lr:(1.000e-04,)] l_pix: 1.2097e-02  train_avg_loss: 1.0800e-02 yuv_psnr_inst : 31.01 psnr_inst : 25.62 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 09:59:32.008 - INFO: [epoch:  0, iter:   1,680, lr:(1.000e-04,)] l_pix: 1.5022e-02  train_avg_loss: 1.0799e-02 yuv_psnr_inst : 40.81 psnr_inst : 34.81 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:00:48.024 - INFO: [epoch:  0, iter:   1,690, lr:(1.000e-04,)] l_pix: 1.6273e-02  train_avg_loss: 1.0797e-02 yuv_psnr_inst : 50.06 psnr_inst : 43.56 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:02:02.680 - INFO: [epoch:  0, iter:   1,700, lr:(1.000e-04,)] l_pix: 8.8803e-03  train_avg_loss: 1.0798e-02 yuv_psnr_inst : 38.81 psnr_inst : 33.02 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:03:19.110 - INFO: [epoch:  0, iter:   1,710, lr:(1.000e-04,)] l_pix: 1.1022e-02  train_avg_loss: 1.0806e-02 yuv_psnr_inst : 36.26 psnr_inst : 30.93 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:04:33.483 - INFO: [epoch:  0, iter:   1,720, lr:(1.000e-04,)] l_pix: 8.0266e-03  train_avg_loss: 1.0808e-02 yuv_psnr_inst : 35.11 psnr_inst : 29.35 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:05:49.277 - INFO: [epoch:  0, iter:   1,730, lr:(1.000e-04,)] l_pix: 1.2096e-02  train_avg_loss: 1.0809e-02 yuv_psnr_inst : 30.47 psnr_inst : 24.80 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:07:06.158 - INFO: [epoch:  0, iter:   1,740, lr:(1.000e-04,)] l_pix: 1.0694e-02  train_avg_loss: 1.0810e-02 yuv_psnr_inst : 44.41 psnr_inst : 39.54 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:08:21.830 - INFO: [epoch:  0, iter:   1,750, lr:(1.000e-04,)] l_pix: 1.0039e-02  train_avg_loss: 1.0809e-02 yuv_psnr_inst : 33.47 psnr_inst : 27.92 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:09:34.485 - INFO: [epoch:  0, iter:   1,760, lr:(1.000e-04,)] l_pix: 9.6218e-03  train_avg_loss: 1.0811e-02 yuv_psnr_inst : 42.86 psnr_inst : 37.00 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:10:51.443 - INFO: [epoch:  0, iter:   1,770, lr:(1.000e-04,)] l_pix: 1.2994e-02  train_avg_loss: 1.0811e-02 yuv_psnr_inst : 36.54 psnr_inst : 31.04 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:12:06.457 - INFO: [epoch:  0, iter:   1,780, lr:(1.000e-04,)] l_pix: 1.0013e-02  train_avg_loss: 1.0805e-02 yuv_psnr_inst : 38.28 psnr_inst : 32.65 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:13:19.070 - INFO: [epoch:  0, iter:   1,790, lr:(1.000e-04,)] l_pix: 1.2809e-02  train_avg_loss: 1.0803e-02 yuv_psnr_inst : 35.77 psnr_inst : 30.16 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:14:32.640 - INFO: [epoch:  0, iter:   1,800, lr:(1.000e-04,)] l_pix: 1.0255e-02  train_avg_loss: 1.0806e-02 yuv_psnr_inst : 33.92 psnr_inst : 28.60 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:15:48.035 - INFO: [epoch:  0, iter:   1,810, lr:(1.000e-04,)] l_pix: 1.3573e-02  train_avg_loss: 1.0805e-02 yuv_psnr_inst : 36.07 psnr_inst : 30.06 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:16:58.306 - INFO: [epoch:  0, iter:   1,820, lr:(1.000e-04,)] l_pix: 9.4715e-03  train_avg_loss: 1.0814e-02 yuv_psnr_inst : 34.67 psnr_inst : 28.98 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:18:13.330 - INFO: [epoch:  0, iter:   1,830, lr:(1.000e-04,)] l_pix: 8.0225e-03  train_avg_loss: 1.0814e-02 yuv_psnr_inst : 39.92 psnr_inst : 34.16 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:19:29.968 - INFO: [epoch:  0, iter:   1,840, lr:(1.000e-04,)] l_pix: 1.1744e-02  train_avg_loss: 1.0807e-02 yuv_psnr_inst : 37.57 psnr_inst : 31.81 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:20:47.460 - INFO: [epoch:  0, iter:   1,850, lr:(1.000e-04,)] l_pix: 9.8804e-03  train_avg_loss: 1.0807e-02 yuv_psnr_inst : 41.01 psnr_inst : 36.17 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:22:04.416 - INFO: [epoch:  0, iter:   1,860, lr:(1.000e-04,)] l_pix: 1.2424e-02  train_avg_loss: 1.0807e-02 yuv_psnr_inst : 31.94 psnr_inst : 26.72 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:23:20.404 - INFO: [epoch:  0, iter:   1,870, lr:(1.000e-04,)] l_pix: 1.1364e-02  train_avg_loss: 1.0814e-02 yuv_psnr_inst : 40.94 psnr_inst : 35.92 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:24:35.547 - INFO: [epoch:  0, iter:   1,880, lr:(1.000e-04,)] l_pix: 7.3593e-03  train_avg_loss: 1.0811e-02 yuv_psnr_inst : 33.14 psnr_inst : 27.99 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:25:53.763 - INFO: [epoch:  0, iter:   1,890, lr:(1.000e-04,)] l_pix: 8.3912e-03  train_avg_loss: 1.0809e-02 yuv_psnr_inst : 37.16 psnr_inst : 31.31 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:27:08.356 - INFO: [epoch:  0, iter:   1,900, lr:(1.000e-04,)] l_pix: 9.5319e-03  train_avg_loss: 1.0804e-02 yuv_psnr_inst : 36.95 psnr_inst : 31.28 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:28:23.779 - INFO: [epoch:  0, iter:   1,910, lr:(1.000e-04,)] l_pix: 8.0895e-03  train_avg_loss: 1.0801e-02 yuv_psnr_inst : 37.43 psnr_inst : 31.85 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:29:39.167 - INFO: [epoch:  0, iter:   1,920, lr:(1.000e-04,)] l_pix: 1.9253e-02  train_avg_loss: 1.0804e-02 yuv_psnr_inst : 38.16 psnr_inst : 32.29 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:30:53.265 - INFO: [epoch:  0, iter:   1,930, lr:(1.000e-04,)] l_pix: 7.9151e-03  train_avg_loss: 1.0798e-02 yuv_psnr_inst : 34.76 psnr_inst : 29.70 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:32:07.153 - INFO: [epoch:  0, iter:   1,940, lr:(1.000e-04,)] l_pix: 9.7855e-03  train_avg_loss: 1.0795e-02 yuv_psnr_inst : 36.18 psnr_inst : 30.81 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:33:22.761 - INFO: [epoch:  0, iter:   1,950, lr:(1.000e-04,)] l_pix: 7.5936e-03  train_avg_loss: 1.0793e-02 yuv_psnr_inst : 34.05 psnr_inst : 28.58 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:34:37.505 - INFO: [epoch:  0, iter:   1,960, lr:(1.000e-04,)] l_pix: 1.0490e-02  train_avg_loss: 1.0790e-02 yuv_psnr_inst : 40.89 psnr_inst : 35.28 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:35:51.012 - INFO: [epoch:  0, iter:   1,970, lr:(1.000e-04,)] l_pix: 1.2506e-02  train_avg_loss: 1.0796e-02 yuv_psnr_inst : 34.31 psnr_inst : 28.67 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:37:07.146 - INFO: [epoch:  0, iter:   1,980, lr:(1.000e-04,)] l_pix: 1.1775e-02  train_avg_loss: 1.0795e-02 yuv_psnr_inst : 36.92 psnr_inst : 31.29 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:38:24.209 - INFO: [epoch:  0, iter:   1,990, lr:(1.000e-04,)] l_pix: 9.8287e-03  train_avg_loss: 1.0797e-02 yuv_psnr_inst : 39.85 psnr_inst : 33.97 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:39:37.842 - INFO: [epoch:  0, iter:   2,000, lr:(1.000e-04,)] l_pix: 1.2731e-02  train_avg_loss: 1.0798e-02 yuv_psnr_inst : 34.90 psnr_inst : 28.92 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:40:53.498 - INFO: [epoch:  0, iter:   2,010, lr:(1.000e-04,)] l_pix: 8.3200e-03  train_avg_loss: 1.0795e-02 yuv_psnr_inst : 44.79 psnr_inst : 39.14 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:42:10.766 - INFO: [epoch:  0, iter:   2,020, lr:(1.000e-04,)] l_pix: 9.2337e-03  train_avg_loss: 1.0796e-02 yuv_psnr_inst : 36.22 psnr_inst : 30.04 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:43:24.676 - INFO: [epoch:  0, iter:   2,030, lr:(1.000e-04,)] l_pix: 9.8652e-03  train_avg_loss: 1.0796e-02 yuv_psnr_inst : 40.98 psnr_inst : 35.08 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:44:42.654 - INFO: [epoch:  0, iter:   2,040, lr:(1.000e-04,)] l_pix: 1.0742e-02  train_avg_loss: 1.0795e-02 yuv_psnr_inst : 33.87 psnr_inst : 27.78 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:45:55.494 - INFO: [epoch:  0, iter:   2,050, lr:(1.000e-04,)] l_pix: 9.6623e-03  train_avg_loss: 1.0798e-02 yuv_psnr_inst : 36.59 psnr_inst : 31.15 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:47:11.303 - INFO: [epoch:  0, iter:   2,060, lr:(1.000e-04,)] l_pix: 1.2124e-02  train_avg_loss: 1.0795e-02 yuv_psnr_inst : 38.23 psnr_inst : 33.40 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:48:27.328 - INFO: [epoch:  0, iter:   2,070, lr:(1.000e-04,)] l_pix: 1.2788e-02  train_avg_loss: 1.0796e-02 yuv_psnr_inst : 29.81 psnr_inst : 24.37 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:49:40.875 - INFO: [epoch:  0, iter:   2,080, lr:(1.000e-04,)] l_pix: 1.3148e-02  train_avg_loss: 1.0799e-02 yuv_psnr_inst : 37.34 psnr_inst : 31.51 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:50:58.036 - INFO: [epoch:  0, iter:   2,090, lr:(1.000e-04,)] l_pix: 6.6439e-03  train_avg_loss: 1.0798e-02 yuv_psnr_inst : 40.99 psnr_inst : 35.59 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:52:11.631 - INFO: [epoch:  0, iter:   2,100, lr:(1.000e-04,)] l_pix: 8.6993e-03  train_avg_loss: 1.0799e-02 yuv_psnr_inst : 42.72 psnr_inst : 37.19 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:53:26.973 - INFO: [epoch:  0, iter:   2,110, lr:(1.000e-04,)] l_pix: 9.8225e-03  train_avg_loss: 1.0796e-02 yuv_psnr_inst : 40.64 psnr_inst : 34.54 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:54:40.749 - INFO: [epoch:  0, iter:   2,120, lr:(1.000e-04,)] l_pix: 1.3911e-02  train_avg_loss: 1.0798e-02 yuv_psnr_inst : 42.07 psnr_inst : 36.48 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:55:54.570 - INFO: [epoch:  0, iter:   2,130, lr:(1.000e-04,)] l_pix: 1.0050e-02  train_avg_loss: 1.0796e-02 yuv_psnr_inst : 34.35 psnr_inst : 28.99 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:57:09.530 - INFO: [epoch:  0, iter:   2,140, lr:(1.000e-04,)] l_pix: 1.0328e-02  train_avg_loss: 1.0795e-02 yuv_psnr_inst : 35.05 psnr_inst : 29.30 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:58:26.680 - INFO: [epoch:  0, iter:   2,150, lr:(1.000e-04,)] l_pix: 1.2155e-02  train_avg_loss: 1.0794e-02 yuv_psnr_inst : 37.08 psnr_inst : 31.25 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 10:59:39.986 - INFO: [epoch:  0, iter:   2,160, lr:(1.000e-04,)] l_pix: 1.0583e-02  train_avg_loss: 1.0802e-02 yuv_psnr_inst : 37.89 psnr_inst : 32.44 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 11:00:55.303 - INFO: [epoch:  0, iter:   2,170, lr:(1.000e-04,)] l_pix: 1.0332e-02  train_avg_loss: 1.0799e-02 yuv_psnr_inst : 37.84 psnr_inst : 32.08 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 11:01:27.671 - INFO: Saving models and training states.
+19-12-31 11:01:51.539 - INFO: 62600438_02 PSNR: 31.2104, SSIM: 0.0000
+19-12-31 11:01:54.041 - INFO: 62600438_00 PSNR: 29.2796, SSIM: 0.0000
+19-12-31 11:01:54.902 - INFO: 62600438_01 PSNR: 30.7645, SSIM: 0.0000
+19-12-31 11:01:54.910 - INFO: 62600438_03 PSNR: 30.9087, SSIM: 0.0000
+19-12-31 11:02:03.280 - INFO: 62600438_06 PSNR: 31.3590, SSIM: 0.0000
+19-12-31 11:02:05.466 - INFO: 62600438_04 PSNR: 30.7351, SSIM: 0.0000
+19-12-31 11:02:06.684 - INFO: 62600438_07 PSNR: 31.5601, SSIM: 0.0000
+19-12-31 11:02:06.912 - INFO: 62600438_05 PSNR: 29.9970, SSIM: 0.0000
+19-12-31 11:02:15.021 - INFO: 62600438_10 PSNR: 31.5137, SSIM: 0.0000
+19-12-31 11:02:17.046 - INFO: 62600438_08 PSNR: 31.3004, SSIM: 0.0000
+19-12-31 11:02:18.659 - INFO: 62600438_11 PSNR: 31.5424, SSIM: 0.0000
+19-12-31 11:02:18.749 - INFO: 62600438_09 PSNR: 30.6778, SSIM: 0.0000
+19-12-31 11:02:26.586 - INFO: 62600438_14 PSNR: 31.1037, SSIM: 0.0000
+19-12-31 11:02:28.678 - INFO: 62600438_12 PSNR: 30.5783, SSIM: 0.0000
+19-12-31 11:02:30.639 - INFO: 62600438_13 PSNR: 30.6186, SSIM: 0.0000
+19-12-31 11:02:30.733 - INFO: 62600438_15 PSNR: 30.4508, SSIM: 0.0000
+19-12-31 11:02:38.532 - INFO: 62600438_18 PSNR: 30.8516, SSIM: 0.0000
+19-12-31 11:02:40.297 - INFO: 62600438_16 PSNR: 29.8933, SSIM: 0.0000
+19-12-31 11:02:42.265 - INFO: 62600438_19 PSNR: 30.9764, SSIM: 0.0000
+19-12-31 11:02:42.473 - INFO: 62600438_17 PSNR: 30.7517, SSIM: 0.0000
+19-12-31 11:02:50.019 - INFO: 62600438_22 PSNR: 30.9398, SSIM: 0.0000
+19-12-31 11:02:52.051 - INFO: 62600438_20 PSNR: 30.1483, SSIM: 0.0000
+19-12-31 11:02:52.923 - INFO: 62600438_23 PSNR: 31.2261, SSIM: 0.0000
+19-12-31 11:02:53.156 - INFO: 62600438_21 PSNR: 30.3493, SSIM: 0.0000
+19-12-31 11:03:01.991 - INFO: 62600438_26 PSNR: 29.6980, SSIM: 0.0000
+19-12-31 11:03:03.622 - INFO: 62600438_24 PSNR: 30.7568, SSIM: 0.0000
+19-12-31 11:03:04.559 - INFO: 62600438_25 PSNR: 29.6997, SSIM: 0.0000
+19-12-31 11:03:04.837 - INFO: 62600438_27 PSNR: 30.6638, SSIM: 0.0000
+19-12-31 11:03:13.674 - INFO: 62600438_30 PSNR: 29.7255, SSIM: 0.0000
+19-12-31 11:03:15.652 - INFO: 62600438_28 PSNR: 30.7880, SSIM: 0.0000
+19-12-31 11:03:16.260 - INFO: 62600438_31 PSNR: 30.9385, SSIM: 0.0000
+19-12-31 11:03:16.441 - INFO: 62600438_29 PSNR: 30.0427, SSIM: 0.0000
+19-12-31 11:03:25.506 - INFO: 62600438_34 PSNR: 30.9705, SSIM: 0.0000
+19-12-31 11:03:27.578 - INFO: 62600438_32 PSNR: 31.3615, SSIM: 0.0000
+19-12-31 11:03:27.814 - INFO: 62600438_35 PSNR: 31.5853, SSIM: 0.0000
+19-12-31 11:03:27.829 - INFO: 62600438_33 PSNR: 30.7331, SSIM: 0.0000
+19-12-31 11:03:37.538 - INFO: 62600438_38 PSNR: 31.3937, SSIM: 0.0000
+19-12-31 11:03:38.800 - INFO: 62600438_36 PSNR: 31.7456, SSIM: 0.0000
+19-12-31 11:03:39.202 - INFO: 62600438_39 PSNR: 31.6203, SSIM: 0.0000
+19-12-31 11:03:39.288 - INFO: 62600438_37 PSNR: 31.2534, SSIM: 0.0000
+19-12-31 11:03:49.202 - INFO: 62600438_42 PSNR: 31.4229, SSIM: 0.0000
+19-12-31 11:03:50.496 - INFO: 62600438_40 PSNR: 31.3996, SSIM: 0.0000
+19-12-31 11:03:51.076 - INFO: 62600438_41 PSNR: 31.1505, SSIM: 0.0000
+19-12-31 11:03:51.163 - INFO: 62600438_43 PSNR: 31.4460, SSIM: 0.0000
+19-12-31 11:04:00.318 - INFO: 62600438_46 PSNR: 29.7028, SSIM: 0.0000
+19-12-31 11:04:02.167 - INFO: 62600438_44 PSNR: 31.1707, SSIM: 0.0000
+19-12-31 11:04:02.698 - INFO: 62600438_45 PSNR: 30.8403, SSIM: 0.0000
+19-12-31 11:04:02.939 - INFO: 62600438_47 PSNR: 31.3510, SSIM: 0.0000
+19-12-31 11:04:12.103 - INFO: 62600438_50 PSNR: 30.3218, SSIM: 0.0000
+19-12-31 11:04:13.784 - INFO: 62600438_48 PSNR: 31.2087, SSIM: 0.0000
+19-12-31 11:04:14.340 - INFO: 62600438_51 PSNR: 31.8569, SSIM: 0.0000
+19-12-31 11:04:14.719 - INFO: 62600438_49 PSNR: 30.3284, SSIM: 0.0000
+19-12-31 11:04:23.784 - INFO: 62600438_54 PSNR: 30.6929, SSIM: 0.0000
+19-12-31 11:04:25.059 - INFO: 62600438_52 PSNR: 30.7436, SSIM: 0.0000
+19-12-31 11:04:25.736 - INFO: 62600438_55 PSNR: 29.6549, SSIM: 0.0000
+19-12-31 11:04:26.325 - INFO: 62600438_53 PSNR: 30.2769, SSIM: 0.0000
+19-12-31 11:04:35.631 - INFO: 62600438_58 PSNR: 28.6424, SSIM: 0.0000
+19-12-31 11:04:36.488 - INFO: 62600438_59 PSNR: 27.8793, SSIM: 0.0000
+19-12-31 11:04:36.836 - INFO: 62600438_56 PSNR: 29.9313, SSIM: 0.0000
+19-12-31 11:04:37.329 - INFO: 62600438_57 PSNR: 28.5526, SSIM: 0.0000
+19-12-31 11:04:47.818 - INFO: 62600438_62 PSNR: 27.5677, SSIM: 0.0000
+19-12-31 11:04:48.502 - INFO: 62600438_63 PSNR: 27.7976, SSIM: 0.0000
+19-12-31 11:04:48.595 - INFO: 62600438_60 PSNR: 27.3532, SSIM: 0.0000
+19-12-31 11:04:49.026 - INFO: 62600438_61 PSNR: 27.3144, SSIM: 0.0000
+19-12-31 11:04:59.348 - INFO: 62600438_66 PSNR: 27.6885, SSIM: 0.0000
+19-12-31 11:04:59.512 - INFO: 62600438_64 PSNR: 29.0060, SSIM: 0.0000
+19-12-31 11:05:00.290 - INFO: 62600438_67 PSNR: 21.1944, SSIM: 0.0000
+19-12-31 11:05:00.533 - INFO: 62600438_65 PSNR: 26.6832, SSIM: 0.0000
+19-12-31 11:05:11.015 - INFO: 62600438_70 PSNR: 20.1763, SSIM: 0.0000
+19-12-31 11:05:11.296 - INFO: 62600438_68 PSNR: 20.4928, SSIM: 0.0000
+19-12-31 11:05:12.098 - INFO: 62600438_71 PSNR: 20.2130, SSIM: 0.0000
+19-12-31 11:05:12.130 - INFO: 62600438_69 PSNR: 20.1013, SSIM: 0.0000
+19-12-31 11:05:22.367 - INFO: 62600438_72 PSNR: 20.1393, SSIM: 0.0000
+19-12-31 11:05:22.708 - INFO: 62600438_74 PSNR: 20.7219, SSIM: 0.0000
+19-12-31 11:05:23.496 - INFO: 62600438_75 PSNR: 20.9088, SSIM: 0.0000
+19-12-31 11:05:23.648 - INFO: 62600438_73 PSNR: 20.2165, SSIM: 0.0000
+19-12-31 11:05:33.598 - INFO: 62600438_76 PSNR: 20.9691, SSIM: 0.0000
+19-12-31 11:05:34.293 - INFO: 62600438_78 PSNR: 21.6820, SSIM: 0.0000
+19-12-31 11:05:35.226 - INFO: 62600438_77 PSNR: 21.3873, SSIM: 0.0000
+19-12-31 11:05:35.423 - INFO: 62600438_79 PSNR: 21.5625, SSIM: 0.0000
+19-12-31 11:05:45.117 - INFO: 62600438_80 PSNR: 21.6937, SSIM: 0.0000
+19-12-31 11:05:46.004 - INFO: 62600438_82 PSNR: 21.4556, SSIM: 0.0000
+19-12-31 11:05:47.182 - INFO: 62600438_83 PSNR: 21.2681, SSIM: 0.0000
+19-12-31 11:05:47.187 - INFO: 62600438_81 PSNR: 21.0045, SSIM: 0.0000
+19-12-31 11:05:56.145 - INFO: 62600438_84 PSNR: 21.3189, SSIM: 0.0000
+19-12-31 11:05:57.652 - INFO: 62600438_86 PSNR: 21.8505, SSIM: 0.0000
+19-12-31 11:05:58.327 - INFO: 62600438_87 PSNR: 22.0622, SSIM: 0.0000
+19-12-31 11:05:58.465 - INFO: 62600438_85 PSNR: 21.2942, SSIM: 0.0000
+19-12-31 11:06:07.486 - INFO: 62600438_88 PSNR: 22.4090, SSIM: 0.0000
+19-12-31 11:06:09.386 - INFO: 62600438_90 PSNR: 22.5517, SSIM: 0.0000
+19-12-31 11:06:09.898 - INFO: 62600438_89 PSNR: 22.1541, SSIM: 0.0000
+19-12-31 11:06:10.162 - INFO: 62600438_91 PSNR: 22.8980, SSIM: 0.0000
+19-12-31 11:06:18.417 - INFO: 62600438_92 PSNR: 22.9061, SSIM: 0.0000
+19-12-31 11:06:21.259 - INFO: 62600438_93 PSNR: 22.8072, SSIM: 0.0000
+19-12-31 11:06:21.381 - INFO: 62600438_94 PSNR: 23.2303, SSIM: 0.0000
+19-12-31 11:06:21.670 - INFO: 62600438_95 PSNR: 23.6735, SSIM: 0.0000
+19-12-31 11:06:29.902 - INFO: 62600438_96 PSNR: 23.6911, SSIM: 0.0000
+19-12-31 11:06:32.097 - INFO: 62600438_97 PSNR: 23.9960, SSIM: 0.0000
+19-12-31 11:06:32.450 - INFO: 62600438_99 PSNR: 23.8466, SSIM: 0.0000
+19-12-31 11:06:32.915 - INFO: 62600438_98 PSNR: 24.0082, SSIM: 0.0000
+19-12-31 11:06:32.966 - INFO: # Validation # PSNR: 2.7536e+01: 62600438: 2.7536e+01
+19-12-31 11:06:32.967 - INFO: # Validation # SSIM: 0.0000e+00: 62600438: 0.0000e+00
+19-12-31 11:06:32.967 - INFO: # Validation # Loss: 1.2944e-02: 62600438: 1.2944e-02
+19-12-31 11:06:32.967 - INFO: Epoch 00, LR 1.00000e-04, PSNR 27.5358, SSIM 0.0000 Train  train_avg_loss: 1.0799e-02 yuv_psnr_inst : 43.44 psnr_inst : 37.92 yuv_psnr_avg : inf psnr_avg : inf, Val Total Loss 1.2944e-02
+19-12-31 11:06:33.183 - INFO: Finished an epoch, Check and Save the model weights
+19-12-31 11:06:33.385 - INFO: Best Weights updated for decreased validation loss
+19-12-31 11:06:33.523 - INFO: Best Weights updated for increased validation PSNR
+19-12-31 11:08:41.166 - INFO: [epoch:  1, iter:      10, lr:(1.000e-04,)] l_pix: 7.3563e-03  train_avg_loss: 9.7887e-03 yuv_psnr_inst : 39.09 psnr_inst : 33.69 yuv_psnr_avg : 39.14 psnr_avg : 33.37
+19-12-31 11:09:53.830 - INFO: [epoch:  1, iter:      20, lr:(1.000e-04,)] l_pix: 1.3541e-02  train_avg_loss: 1.0654e-02 yuv_psnr_inst : 42.93 psnr_inst : 37.02 yuv_psnr_avg : 39.14 psnr_avg : 33.41
+19-12-31 11:11:07.372 - INFO: [epoch:  1, iter:      30, lr:(1.000e-04,)] l_pix: 7.3063e-03  train_avg_loss: 1.0192e-02 yuv_psnr_inst : 39.36 psnr_inst : 33.61 yuv_psnr_avg : 38.66 psnr_avg : 32.89
+19-12-31 11:12:26.184 - INFO: [epoch:  1, iter:      40, lr:(1.000e-04,)] l_pix: 9.9853e-03  train_avg_loss: 1.0032e-02 yuv_psnr_inst : 37.20 psnr_inst : 32.57 yuv_psnr_avg : 38.21 psnr_avg : 32.48
+19-12-31 11:13:41.082 - INFO: [epoch:  1, iter:      50, lr:(1.000e-04,)] l_pix: 1.1631e-02  train_avg_loss: 1.0035e-02 yuv_psnr_inst : 31.96 psnr_inst : 27.19 yuv_psnr_avg : 37.87 psnr_avg : 32.22
+19-12-31 11:14:53.580 - INFO: [epoch:  1, iter:      60, lr:(1.000e-04,)] l_pix: 1.2827e-02  train_avg_loss: 1.0330e-02 yuv_psnr_inst : 32.49 psnr_inst : 27.13 yuv_psnr_avg : 37.84 psnr_avg : 32.21
+19-12-31 11:16:10.202 - INFO: [epoch:  1, iter:      70, lr:(1.000e-04,)] l_pix: 1.4167e-02  train_avg_loss: 1.0515e-02 yuv_psnr_inst : 31.05 psnr_inst : 25.21 yuv_psnr_avg : 37.21 psnr_avg : 31.59
+19-12-31 11:17:26.999 - INFO: [epoch:  1, iter:      80, lr:(1.000e-04,)] l_pix: 6.4927e-03  train_avg_loss: 1.0488e-02 yuv_psnr_inst : 43.98 psnr_inst : 38.66 yuv_psnr_avg : 37.35 psnr_avg : 31.74
+19-12-31 11:18:42.436 - INFO: [epoch:  1, iter:      90, lr:(1.000e-04,)] l_pix: 1.6883e-02  train_avg_loss: 1.0525e-02 yuv_psnr_inst : 34.96 psnr_inst : 28.96 yuv_psnr_avg : 37.38 psnr_avg : 31.77
+19-12-31 11:19:59.349 - INFO: [epoch:  1, iter:     100, lr:(1.000e-04,)] l_pix: 8.3384e-03  train_avg_loss: 1.0490e-02 yuv_psnr_inst : 35.05 psnr_inst : 30.11 yuv_psnr_avg : 37.19 psnr_avg : 31.58
+19-12-31 11:21:12.632 - INFO: [epoch:  1, iter:     110, lr:(1.000e-04,)] l_pix: 1.1329e-02  train_avg_loss: 1.0554e-02 yuv_psnr_inst : 39.16 psnr_inst : 33.42 yuv_psnr_avg : 37.26 psnr_avg : 31.65
+19-12-31 11:22:26.153 - INFO: [epoch:  1, iter:     120, lr:(1.000e-04,)] l_pix: 1.0135e-02  train_avg_loss: 1.0583e-02 yuv_psnr_inst : 36.08 psnr_inst : 30.39 yuv_psnr_avg : 37.17 psnr_avg : 31.54
+19-12-31 11:23:42.012 - INFO: [epoch:  1, iter:     130, lr:(1.000e-04,)] l_pix: 1.1199e-02  train_avg_loss: 1.0564e-02 yuv_psnr_inst : 37.95 psnr_inst : 32.32 yuv_psnr_avg : 37.29 psnr_avg : 31.64
+19-12-31 11:24:59.691 - INFO: [epoch:  1, iter:     140, lr:(1.000e-04,)] l_pix: 1.1115e-02  train_avg_loss: 1.0551e-02 yuv_psnr_inst : 29.57 psnr_inst : 23.70 yuv_psnr_avg : 37.26 psnr_avg : 31.63
+19-12-31 11:26:15.288 - INFO: [epoch:  1, iter:     150, lr:(1.000e-04,)] l_pix: 1.1547e-02  train_avg_loss: 1.0598e-02 yuv_psnr_inst : 35.62 psnr_inst : 30.25 yuv_psnr_avg : 37.30 psnr_avg : 31.67
+19-12-31 11:27:29.765 - INFO: [epoch:  1, iter:     160, lr:(1.000e-04,)] l_pix: 1.2633e-02  train_avg_loss: 1.0696e-02 yuv_psnr_inst : 32.19 psnr_inst : 26.46 yuv_psnr_avg : 37.20 psnr_avg : 31.58
+19-12-31 11:28:45.954 - INFO: [epoch:  1, iter:     170, lr:(1.000e-04,)] l_pix: 1.1141e-02  train_avg_loss: 1.0710e-02 yuv_psnr_inst : 43.70 psnr_inst : 38.67 yuv_psnr_avg : 37.12 psnr_avg : 31.50
+19-12-31 11:30:01.677 - INFO: [epoch:  1, iter:     180, lr:(1.000e-04,)] l_pix: 9.2282e-03  train_avg_loss: 1.0712e-02 yuv_psnr_inst : 35.08 psnr_inst : 29.49 yuv_psnr_avg : 37.04 psnr_avg : 31.41
+19-12-31 11:31:16.874 - INFO: [epoch:  1, iter:     190, lr:(1.000e-04,)] l_pix: 9.0518e-03  train_avg_loss: 1.0743e-02 yuv_psnr_inst : 41.23 psnr_inst : 35.06 yuv_psnr_avg : 37.06 psnr_avg : 31.43
+19-12-31 11:32:32.902 - INFO: [epoch:  1, iter:     200, lr:(1.000e-04,)] l_pix: 1.3734e-02  train_avg_loss: 1.0799e-02 yuv_psnr_inst : 31.54 psnr_inst : 25.84 yuv_psnr_avg : 37.03 psnr_avg : 31.40
+19-12-31 11:33:46.598 - INFO: [epoch:  1, iter:     210, lr:(1.000e-04,)] l_pix: 1.3948e-02  train_avg_loss: 1.0799e-02 yuv_psnr_inst : 30.40 psnr_inst : 24.94 yuv_psnr_avg : 37.04 psnr_avg : 31.40
+19-12-31 11:35:02.449 - INFO: [epoch:  1, iter:     220, lr:(1.000e-04,)] l_pix: 7.8589e-03  train_avg_loss: 1.0765e-02 yuv_psnr_inst : 38.68 psnr_inst : 32.82 yuv_psnr_avg : 37.04 psnr_avg : 31.41
+19-12-31 11:36:17.652 - INFO: [epoch:  1, iter:     230, lr:(1.000e-04,)] l_pix: 1.0674e-02  train_avg_loss: 1.0722e-02 yuv_psnr_inst : 36.48 psnr_inst : 30.85 yuv_psnr_avg : 37.10 psnr_avg : 31.46
+19-12-31 11:37:34.818 - INFO: [epoch:  1, iter:     240, lr:(1.000e-04,)] l_pix: 9.7615e-03  train_avg_loss: 1.0713e-02 yuv_psnr_inst : 27.18 psnr_inst : 21.29 yuv_psnr_avg : 37.07 psnr_avg : 31.43
+19-12-31 11:38:49.013 - INFO: [epoch:  1, iter:     250, lr:(1.000e-04,)] l_pix: 8.6746e-03  train_avg_loss: 1.0733e-02 yuv_psnr_inst : 37.69 psnr_inst : 31.72 yuv_psnr_avg : 37.08 psnr_avg : 31.44
+19-12-31 11:40:00.999 - INFO: [epoch:  1, iter:     260, lr:(1.000e-04,)] l_pix: 1.2707e-02  train_avg_loss: 1.0724e-02 yuv_psnr_inst : 28.04 psnr_inst : 21.83 yuv_psnr_avg : 36.99 psnr_avg : 31.35
+19-12-31 11:41:18.827 - INFO: [epoch:  1, iter:     270, lr:(1.000e-04,)] l_pix: 8.4936e-03  train_avg_loss: 1.0682e-02 yuv_psnr_inst : 35.14 psnr_inst : 28.89 yuv_psnr_avg : 37.06 psnr_avg : 31.42
+19-12-31 11:42:31.643 - INFO: [epoch:  1, iter:     280, lr:(1.000e-04,)] l_pix: 9.9104e-03  train_avg_loss: 1.0649e-02 yuv_psnr_inst : 40.21 psnr_inst : 34.43 yuv_psnr_avg : 37.13 psnr_avg : 31.49
+19-12-31 11:43:48.376 - INFO: [epoch:  1, iter:     290, lr:(1.000e-04,)] l_pix: 1.4609e-02  train_avg_loss: 1.0661e-02 yuv_psnr_inst : 40.37 psnr_inst : 34.74 yuv_psnr_avg : 37.09 psnr_avg : 31.44
+19-12-31 11:45:04.331 - INFO: [epoch:  1, iter:     300, lr:(1.000e-04,)] l_pix: 9.4943e-03  train_avg_loss: 1.0644e-02 yuv_psnr_inst : 40.00 psnr_inst : 34.17 yuv_psnr_avg : 37.06 psnr_avg : 31.40
+19-12-31 11:46:19.568 - INFO: [epoch:  1, iter:     310, lr:(1.000e-04,)] l_pix: 9.7261e-03  train_avg_loss: 1.0637e-02 yuv_psnr_inst : 37.45 psnr_inst : 31.86 yuv_psnr_avg : 37.01 psnr_avg : 31.35
+19-12-31 11:47:34.641 - INFO: [epoch:  1, iter:     320, lr:(1.000e-04,)] l_pix: 1.0173e-02  train_avg_loss: 1.0614e-02 yuv_psnr_inst : 40.81 psnr_inst : 34.91 yuv_psnr_avg : 37.07 psnr_avg : 31.41
+19-12-31 11:48:50.044 - INFO: [epoch:  1, iter:     330, lr:(1.000e-04,)] l_pix: 1.0935e-02  train_avg_loss: 1.0623e-02 yuv_psnr_inst : 34.66 psnr_inst : 28.60 yuv_psnr_avg : 37.07 psnr_avg : 31.40
+19-12-31 11:50:05.908 - INFO: [epoch:  1, iter:     340, lr:(1.000e-04,)] l_pix: 1.1771e-02  train_avg_loss: 1.0616e-02 yuv_psnr_inst : 36.76 psnr_inst : 30.71 yuv_psnr_avg : 37.04 psnr_avg : 31.37
+19-12-31 11:51:21.508 - INFO: [epoch:  1, iter:     350, lr:(1.000e-04,)] l_pix: 8.6885e-03  train_avg_loss: 1.0606e-02 yuv_psnr_inst : 37.83 psnr_inst : 32.08 yuv_psnr_avg : 37.07 psnr_avg : 31.41
+19-12-31 11:52:36.795 - INFO: [epoch:  1, iter:     360, lr:(1.000e-04,)] l_pix: 7.5187e-03  train_avg_loss: 1.0597e-02 yuv_psnr_inst : 36.29 psnr_inst : 30.61 yuv_psnr_avg : 37.03 psnr_avg : 31.36
+19-12-31 11:53:52.926 - INFO: [epoch:  1, iter:     370, lr:(1.000e-04,)] l_pix: 1.5690e-02  train_avg_loss: 1.0621e-02 yuv_psnr_inst : 32.29 psnr_inst : 26.34 yuv_psnr_avg : 37.00 psnr_avg : 31.34
+19-12-31 11:55:07.205 - INFO: [epoch:  1, iter:     380, lr:(1.000e-04,)] l_pix: 7.4771e-03  train_avg_loss: 1.0636e-02 yuv_psnr_inst : 37.87 psnr_inst : 32.24 yuv_psnr_avg : 37.02 psnr_avg : 31.35
+19-12-31 11:56:18.469 - INFO: [epoch:  1, iter:     390, lr:(1.000e-04,)] l_pix: 6.1114e-03  train_avg_loss: 1.0623e-02 yuv_psnr_inst : 40.07 psnr_inst : 34.38 yuv_psnr_avg : 37.04 psnr_avg : 31.38
+19-12-31 11:57:33.293 - INFO: [epoch:  1, iter:     400, lr:(1.000e-04,)] l_pix: 1.6336e-02  train_avg_loss: 1.0609e-02 yuv_psnr_inst : 32.82 psnr_inst : 26.79 yuv_psnr_avg : 37.01 psnr_avg : 31.35
+19-12-31 11:58:49.602 - INFO: [epoch:  1, iter:     410, lr:(1.000e-04,)] l_pix: 2.0631e-02  train_avg_loss: 1.0621e-02 yuv_psnr_inst : 37.43 psnr_inst : 32.06 yuv_psnr_avg : 37.04 psnr_avg : 31.37
+19-12-31 12:00:05.438 - INFO: [epoch:  1, iter:     420, lr:(1.000e-04,)] l_pix: 1.0548e-02  train_avg_loss: 1.0616e-02 yuv_psnr_inst : 44.23 psnr_inst : 38.35 yuv_psnr_avg : 37.04 psnr_avg : 31.39
+19-12-31 12:01:21.848 - INFO: [epoch:  1, iter:     430, lr:(1.000e-04,)] l_pix: 1.2562e-02  train_avg_loss: 1.0624e-02 yuv_psnr_inst : 34.72 psnr_inst : 29.28 yuv_psnr_avg : 37.04 psnr_avg : 31.39
+19-12-31 12:02:35.346 - INFO: [epoch:  1, iter:     440, lr:(1.000e-04,)] l_pix: 8.1024e-03  train_avg_loss: 1.0627e-02 yuv_psnr_inst : 42.29 psnr_inst : 36.48 yuv_psnr_avg : 37.06 psnr_avg : 31.40
+19-12-31 12:03:51.098 - INFO: [epoch:  1, iter:     450, lr:(1.000e-04,)] l_pix: 1.0922e-02  train_avg_loss: 1.0621e-02 yuv_psnr_inst : 33.36 psnr_inst : 27.51 yuv_psnr_avg : 37.11 psnr_avg : 31.46
+19-12-31 12:05:05.396 - INFO: [epoch:  1, iter:     460, lr:(1.000e-04,)] l_pix: 1.1690e-02  train_avg_loss: 1.0635e-02 yuv_psnr_inst : 35.85 psnr_inst : 29.50 yuv_psnr_avg : 37.09 psnr_avg : 31.43
+19-12-31 12:06:20.324 - INFO: [epoch:  1, iter:     470, lr:(1.000e-04,)] l_pix: 1.0548e-02  train_avg_loss: 1.0641e-02 yuv_psnr_inst : 47.69 psnr_inst : 42.11 yuv_psnr_avg : 37.09 psnr_avg : 31.44
+19-12-31 12:07:35.637 - INFO: [epoch:  1, iter:     480, lr:(1.000e-04,)] l_pix: 1.0431e-02  train_avg_loss: 1.0634e-02 yuv_psnr_inst : 34.48 psnr_inst : 28.82 yuv_psnr_avg : 37.10 psnr_avg : 31.44
+19-12-31 12:08:48.271 - INFO: [epoch:  1, iter:     490, lr:(1.000e-04,)] l_pix: 1.3302e-02  train_avg_loss: 1.0642e-02 yuv_psnr_inst : 32.45 psnr_inst : 27.41 yuv_psnr_avg : 37.08 psnr_avg : 31.43
+19-12-31 12:10:03.586 - INFO: [epoch:  1, iter:     500, lr:(1.000e-04,)] l_pix: 8.6247e-03  train_avg_loss: 1.0637e-02 yuv_psnr_inst : 35.35 psnr_inst : 29.98 yuv_psnr_avg : 37.04 psnr_avg : 31.39
+19-12-31 12:11:21.088 - INFO: [epoch:  1, iter:     510, lr:(1.000e-04,)] l_pix: 9.5677e-03  train_avg_loss: 1.0621e-02 yuv_psnr_inst : 53.09 psnr_inst : 47.71 yuv_psnr_avg : 37.09 psnr_avg : 31.44
+19-12-31 12:12:38.765 - INFO: [epoch:  1, iter:     520, lr:(1.000e-04,)] l_pix: 1.0438e-02  train_avg_loss: 1.0654e-02 yuv_psnr_inst : 34.28 psnr_inst : 28.64 yuv_psnr_avg : 37.06 psnr_avg : 31.41
+19-12-31 12:13:48.875 - INFO: [epoch:  1, iter:     530, lr:(1.000e-04,)] l_pix: 1.3104e-02  train_avg_loss: 1.0673e-02 yuv_psnr_inst : 33.32 psnr_inst : 27.50 yuv_psnr_avg : 37.03 psnr_avg : 31.38
+19-12-31 12:15:01.845 - INFO: [epoch:  1, iter:     540, lr:(1.000e-04,)] l_pix: 1.3372e-02  train_avg_loss: 1.0677e-02 yuv_psnr_inst : 39.02 psnr_inst : 32.95 yuv_psnr_avg : 37.05 psnr_avg : 31.39
+19-12-31 12:16:20.677 - INFO: [epoch:  1, iter:     550, lr:(1.000e-04,)] l_pix: 8.6885e-03  train_avg_loss: 1.0685e-02 yuv_psnr_inst : 40.57 psnr_inst : 35.06 yuv_psnr_avg : 37.06 psnr_avg : 31.41
+19-12-31 12:17:38.368 - INFO: [epoch:  1, iter:     560, lr:(1.000e-04,)] l_pix: 1.4902e-02  train_avg_loss: 1.0694e-02 yuv_psnr_inst : 22.18 psnr_inst : 15.91 yuv_psnr_avg : 37.05 psnr_avg : 31.40
+19-12-31 12:18:52.344 - INFO: [epoch:  1, iter:     570, lr:(1.000e-04,)] l_pix: 8.8011e-03  train_avg_loss: 1.0697e-02 yuv_psnr_inst : 37.92 psnr_inst : 31.71 yuv_psnr_avg : 37.02 psnr_avg : 31.37
+19-12-31 12:20:08.188 - INFO: [epoch:  1, iter:     580, lr:(1.000e-04,)] l_pix: 7.6108e-03  train_avg_loss: 1.0687e-02 yuv_psnr_inst : 36.88 psnr_inst : 32.42 yuv_psnr_avg : 36.99 psnr_avg : 31.34
+19-12-31 12:21:22.848 - INFO: [epoch:  1, iter:     590, lr:(1.000e-04,)] l_pix: 9.5013e-03  train_avg_loss: 1.0682e-02 yuv_psnr_inst : 42.69 psnr_inst : 36.96 yuv_psnr_avg : 36.98 psnr_avg : 31.32
+19-12-31 12:22:36.095 - INFO: [epoch:  1, iter:     600, lr:(1.000e-04,)] l_pix: 8.4993e-03  train_avg_loss: 1.0686e-02 yuv_psnr_inst : 35.20 psnr_inst : 29.05 yuv_psnr_avg : 36.96 psnr_avg : 31.31
+19-12-31 12:23:51.437 - INFO: [epoch:  1, iter:     610, lr:(1.000e-04,)] l_pix: 8.8727e-03  train_avg_loss: 1.0670e-02 yuv_psnr_inst : 37.22 psnr_inst : 31.92 yuv_psnr_avg : 36.94 psnr_avg : 31.29
+19-12-31 12:25:04.748 - INFO: [epoch:  1, iter:     620, lr:(1.000e-04,)] l_pix: 9.5701e-03  train_avg_loss: 1.0657e-02 yuv_psnr_inst : 39.36 psnr_inst : 33.94 yuv_psnr_avg : 36.94 psnr_avg : 31.29
+19-12-31 12:26:22.484 - INFO: [epoch:  1, iter:     630, lr:(1.000e-04,)] l_pix: 6.7205e-03  train_avg_loss: 1.0662e-02 yuv_psnr_inst : 43.60 psnr_inst : 37.72 yuv_psnr_avg : 37.01 psnr_avg : 31.36
+19-12-31 12:27:35.919 - INFO: [epoch:  1, iter:     640, lr:(1.000e-04,)] l_pix: 9.3077e-03  train_avg_loss: 1.0669e-02 yuv_psnr_inst : 36.06 psnr_inst : 30.27 yuv_psnr_avg : 37.00 psnr_avg : 31.35
+19-12-31 12:28:52.429 - INFO: [epoch:  1, iter:     650, lr:(1.000e-04,)] l_pix: 1.2665e-02  train_avg_loss: 1.0671e-02 yuv_psnr_inst : 39.35 psnr_inst : 32.46 yuv_psnr_avg : 37.00 psnr_avg : 31.35
+19-12-31 12:30:08.054 - INFO: [epoch:  1, iter:     660, lr:(1.000e-04,)] l_pix: 8.3590e-03  train_avg_loss: 1.0660e-02 yuv_psnr_inst : 40.22 psnr_inst : 34.54 yuv_psnr_avg : 37.01 psnr_avg : 31.36
+19-12-31 12:31:22.005 - INFO: [epoch:  1, iter:     670, lr:(1.000e-04,)] l_pix: 1.0137e-02  train_avg_loss: 1.0656e-02 yuv_psnr_inst : 35.45 psnr_inst : 29.59 yuv_psnr_avg : 37.01 psnr_avg : 31.36
+19-12-31 12:32:36.588 - INFO: [epoch:  1, iter:     680, lr:(1.000e-04,)] l_pix: 1.2361e-02  train_avg_loss: 1.0655e-02 yuv_psnr_inst : 44.17 psnr_inst : 37.73 yuv_psnr_avg : 37.03 psnr_avg : 31.38
+19-12-31 12:33:51.775 - INFO: [epoch:  1, iter:     690, lr:(1.000e-04,)] l_pix: 9.8589e-03  train_avg_loss: 1.0648e-02 yuv_psnr_inst : 29.90 psnr_inst : 24.86 yuv_psnr_avg : 37.01 psnr_avg : 31.37
+19-12-31 12:35:08.021 - INFO: [epoch:  1, iter:     700, lr:(1.000e-04,)] l_pix: 1.0422e-02  train_avg_loss: 1.0647e-02 yuv_psnr_inst : 42.81 psnr_inst : 36.74 yuv_psnr_avg : 37.04 psnr_avg : 31.39
+19-12-31 12:36:21.393 - INFO: [epoch:  1, iter:     710, lr:(1.000e-04,)] l_pix: 1.0438e-02  train_avg_loss: 1.0644e-02 yuv_psnr_inst : 28.67 psnr_inst : 24.17 yuv_psnr_avg : 37.04 psnr_avg : 31.40
+19-12-31 12:37:36.449 - INFO: [epoch:  1, iter:     720, lr:(1.000e-04,)] l_pix: 1.0684e-02  train_avg_loss: 1.0658e-02 yuv_psnr_inst : 40.86 psnr_inst : 34.30 yuv_psnr_avg : 37.06 psnr_avg : 31.41
+19-12-31 12:38:52.566 - INFO: [epoch:  1, iter:     730, lr:(1.000e-04,)] l_pix: 1.4950e-02  train_avg_loss: 1.0659e-02 yuv_psnr_inst : 33.59 psnr_inst : 27.96 yuv_psnr_avg : 37.07 psnr_avg : 31.42
+19-12-31 12:40:06.889 - INFO: [epoch:  1, iter:     740, lr:(1.000e-04,)] l_pix: 1.0621e-02  train_avg_loss: 1.0650e-02 yuv_psnr_inst : 35.64 psnr_inst : 30.09 yuv_psnr_avg : 37.07 psnr_avg : 31.42
+19-12-31 12:41:21.360 - INFO: [epoch:  1, iter:     750, lr:(1.000e-04,)] l_pix: 1.5215e-02  train_avg_loss: 1.0652e-02 yuv_psnr_inst : 32.73 psnr_inst : 27.04 yuv_psnr_avg : 37.10 psnr_avg : 31.45
+19-12-31 12:42:37.406 - INFO: [epoch:  1, iter:     760, lr:(1.000e-04,)] l_pix: 1.2024e-02  train_avg_loss: 1.0651e-02 yuv_psnr_inst : 35.37 psnr_inst : 29.89 yuv_psnr_avg : 37.07 psnr_avg : 31.42
+19-12-31 12:43:52.131 - INFO: [epoch:  1, iter:     770, lr:(1.000e-04,)] l_pix: 1.1807e-02  train_avg_loss: 1.0650e-02 yuv_psnr_inst : 38.20 psnr_inst : 32.78 yuv_psnr_avg : 37.09 psnr_avg : 31.44
+19-12-31 12:45:08.325 - INFO: [epoch:  1, iter:     780, lr:(1.000e-04,)] l_pix: 1.0306e-02  train_avg_loss: 1.0651e-02 yuv_psnr_inst : 36.15 psnr_inst : 30.33 yuv_psnr_avg : 37.09 psnr_avg : 31.45
+19-12-31 12:46:23.147 - INFO: [epoch:  1, iter:     790, lr:(1.000e-04,)] l_pix: 7.4904e-03  train_avg_loss: 1.0638e-02 yuv_psnr_inst : 36.78 psnr_inst : 30.45 yuv_psnr_avg : 37.11 psnr_avg : 31.46
+19-12-31 12:47:36.442 - INFO: [epoch:  1, iter:     800, lr:(1.000e-04,)] l_pix: 1.2921e-02  train_avg_loss: 1.0640e-02 yuv_psnr_inst : 40.77 psnr_inst : 35.23 yuv_psnr_avg : 37.12 psnr_avg : 31.47
+19-12-31 12:48:51.699 - INFO: [epoch:  1, iter:     810, lr:(1.000e-04,)] l_pix: 1.5193e-02  train_avg_loss: 1.0660e-02 yuv_psnr_inst : 36.53 psnr_inst : 30.62 yuv_psnr_avg : 37.14 psnr_avg : 31.48
+19-12-31 12:50:06.914 - INFO: [epoch:  1, iter:     820, lr:(1.000e-04,)] l_pix: 1.2090e-02  train_avg_loss: 1.0666e-02 yuv_psnr_inst : 35.24 psnr_inst : 29.40 yuv_psnr_avg : 37.14 psnr_avg : 31.49
+19-12-31 12:51:20.306 - INFO: [epoch:  1, iter:     830, lr:(1.000e-04,)] l_pix: 1.0672e-02  train_avg_loss: 1.0666e-02 yuv_psnr_inst : 36.52 psnr_inst : 30.86 yuv_psnr_avg : 37.15 psnr_avg : 31.50
+19-12-31 12:52:35.066 - INFO: [epoch:  1, iter:     840, lr:(1.000e-04,)] l_pix: 9.5079e-03  train_avg_loss: 1.0669e-02 yuv_psnr_inst : 31.67 psnr_inst : 25.66 yuv_psnr_avg : 37.12 psnr_avg : 31.46
+19-12-31 12:53:48.797 - INFO: [epoch:  1, iter:     850, lr:(1.000e-04,)] l_pix: 9.7293e-03  train_avg_loss: 1.0666e-02 yuv_psnr_inst : 39.10 psnr_inst : 33.53 yuv_psnr_avg : 37.15 psnr_avg : 31.49
+19-12-31 12:55:05.602 - INFO: [epoch:  1, iter:     860, lr:(1.000e-04,)] l_pix: 1.0930e-02  train_avg_loss: 1.0679e-02 yuv_psnr_inst : 31.78 psnr_inst : 26.65 yuv_psnr_avg : 37.14 psnr_avg : 31.48
+19-12-31 12:56:18.122 - INFO: [epoch:  1, iter:     870, lr:(1.000e-04,)] l_pix: 8.6790e-03  train_avg_loss: 1.0664e-02 yuv_psnr_inst : 33.44 psnr_inst : 28.30 yuv_psnr_avg : 37.16 psnr_avg : 31.50
+19-12-31 12:57:32.973 - INFO: [epoch:  1, iter:     880, lr:(1.000e-04,)] l_pix: 8.4819e-03  train_avg_loss: 1.0662e-02 yuv_psnr_inst : 38.27 psnr_inst : 33.23 yuv_psnr_avg : 37.13 psnr_avg : 31.48
+19-12-31 12:58:48.475 - INFO: [epoch:  1, iter:     890, lr:(1.000e-04,)] l_pix: 9.8886e-03  train_avg_loss: 1.0659e-02 yuv_psnr_inst : 33.00 psnr_inst : 27.47 yuv_psnr_avg : 37.13 psnr_avg : 31.47
+19-12-31 13:00:03.799 - INFO: [epoch:  1, iter:     900, lr:(1.000e-04,)] l_pix: 9.5925e-03  train_avg_loss: 1.0654e-02 yuv_psnr_inst : 37.93 psnr_inst : 32.77 yuv_psnr_avg : 37.12 psnr_avg : 31.47
+19-12-31 13:01:19.031 - INFO: [epoch:  1, iter:     910, lr:(1.000e-04,)] l_pix: 1.3862e-02  train_avg_loss: 1.0657e-02 yuv_psnr_inst : 46.22 psnr_inst : 40.73 yuv_psnr_avg : 37.13 psnr_avg : 31.48
+19-12-31 13:02:33.804 - INFO: [epoch:  1, iter:     920, lr:(1.000e-04,)] l_pix: 1.4342e-02  train_avg_loss: 1.0653e-02 yuv_psnr_inst : 23.35 psnr_inst : 17.18 yuv_psnr_avg : 37.13 psnr_avg : 31.48
+19-12-31 13:03:48.034 - INFO: [epoch:  1, iter:     930, lr:(1.000e-04,)] l_pix: 1.0070e-02  train_avg_loss: 1.0655e-02 yuv_psnr_inst : 36.56 psnr_inst : 30.91 yuv_psnr_avg : 37.13 psnr_avg : 31.47
+19-12-31 13:05:03.566 - INFO: [epoch:  1, iter:     940, lr:(1.000e-04,)] l_pix: 8.7004e-03  train_avg_loss: 1.0640e-02 yuv_psnr_inst : 36.04 psnr_inst : 30.60 yuv_psnr_avg : 37.13 psnr_avg : 31.47
+19-12-31 13:06:15.142 - INFO: [epoch:  1, iter:     950, lr:(1.000e-04,)] l_pix: 9.9209e-03  train_avg_loss: 1.0635e-02 yuv_psnr_inst : 33.96 psnr_inst : 27.71 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:07:33.282 - INFO: [epoch:  1, iter:     960, lr:(1.000e-04,)] l_pix: 1.4616e-02  train_avg_loss: 1.0636e-02 yuv_psnr_inst : 40.95 psnr_inst : 35.45 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:08:48.108 - INFO: [epoch:  1, iter:     970, lr:(1.000e-04,)] l_pix: 1.4232e-02  train_avg_loss: 1.0634e-02 yuv_psnr_inst : 31.91 psnr_inst : 26.96 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:10:03.083 - INFO: [epoch:  1, iter:     980, lr:(1.000e-04,)] l_pix: 1.1538e-02  train_avg_loss: 1.0633e-02 yuv_psnr_inst : 38.34 psnr_inst : 32.86 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:11:17.977 - INFO: [epoch:  1, iter:     990, lr:(1.000e-04,)] l_pix: 1.0824e-02  train_avg_loss: 1.0631e-02 yuv_psnr_inst : 35.46 psnr_inst : 30.67 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:12:34.288 - INFO: [epoch:  1, iter:   1,000, lr:(1.000e-04,)] l_pix: 1.1053e-02  train_avg_loss: 1.0624e-02 yuv_psnr_inst : 38.27 psnr_inst : 32.32 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:13:50.883 - INFO: [epoch:  1, iter:   1,010, lr:(1.000e-04,)] l_pix: 1.1993e-02  train_avg_loss: 1.0625e-02 yuv_psnr_inst : 33.46 psnr_inst : 28.01 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:15:07.036 - INFO: [epoch:  1, iter:   1,020, lr:(1.000e-04,)] l_pix: 8.8920e-03  train_avg_loss: 1.0625e-02 yuv_psnr_inst : 37.05 psnr_inst : 31.32 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:16:19.378 - INFO: [epoch:  1, iter:   1,030, lr:(1.000e-04,)] l_pix: 1.1455e-02  train_avg_loss: 1.0630e-02 yuv_psnr_inst : 29.15 psnr_inst : 23.70 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:17:35.760 - INFO: [epoch:  1, iter:   1,040, lr:(1.000e-04,)] l_pix: 9.2945e-03  train_avg_loss: 1.0627e-02 yuv_psnr_inst : 40.27 psnr_inst : 35.97 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:18:48.985 - INFO: [epoch:  1, iter:   1,050, lr:(1.000e-04,)] l_pix: 1.0691e-02  train_avg_loss: 1.0629e-02 yuv_psnr_inst : 41.15 psnr_inst : 35.80 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:20:05.511 - INFO: [epoch:  1, iter:   1,060, lr:(1.000e-04,)] l_pix: 9.2247e-03  train_avg_loss: 1.0620e-02 yuv_psnr_inst : 36.42 psnr_inst : 31.08 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:21:19.621 - INFO: [epoch:  1, iter:   1,070, lr:(1.000e-04,)] l_pix: 7.6690e-03  train_avg_loss: 1.0619e-02 yuv_psnr_inst : 36.29 psnr_inst : 30.99 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:22:34.940 - INFO: [epoch:  1, iter:   1,080, lr:(1.000e-04,)] l_pix: 8.9469e-03  train_avg_loss: 1.0607e-02 yuv_psnr_inst : 42.69 psnr_inst : 36.77 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:23:46.826 - INFO: [epoch:  1, iter:   1,090, lr:(1.000e-04,)] l_pix: 7.9833e-03  train_avg_loss: 1.0600e-02 yuv_psnr_inst : 37.51 psnr_inst : 31.78 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:25:03.369 - INFO: [epoch:  1, iter:   1,100, lr:(1.000e-04,)] l_pix: 8.0824e-03  train_avg_loss: 1.0596e-02 yuv_psnr_inst : 38.52 psnr_inst : 32.57 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:26:16.414 - INFO: [epoch:  1, iter:   1,110, lr:(1.000e-04,)] l_pix: 1.1926e-02  train_avg_loss: 1.0601e-02 yuv_psnr_inst : 40.50 psnr_inst : 34.84 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:27:33.392 - INFO: [epoch:  1, iter:   1,120, lr:(1.000e-04,)] l_pix: 1.1306e-02  train_avg_loss: 1.0605e-02 yuv_psnr_inst : 44.45 psnr_inst : 38.33 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:28:50.138 - INFO: [epoch:  1, iter:   1,130, lr:(1.000e-04,)] l_pix: 1.2121e-02  train_avg_loss: 1.0625e-02 yuv_psnr_inst : 30.25 psnr_inst : 24.60 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:30:05.242 - INFO: [epoch:  1, iter:   1,140, lr:(1.000e-04,)] l_pix: 1.0866e-02  train_avg_loss: 1.0626e-02 yuv_psnr_inst : 36.68 psnr_inst : 32.35 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:31:18.826 - INFO: [epoch:  1, iter:   1,150, lr:(1.000e-04,)] l_pix: 9.3960e-03  train_avg_loss: 1.0628e-02 yuv_psnr_inst : 39.47 psnr_inst : 33.76 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:32:34.001 - INFO: [epoch:  1, iter:   1,160, lr:(1.000e-04,)] l_pix: 1.3885e-02  train_avg_loss: 1.0635e-02 yuv_psnr_inst : 34.09 psnr_inst : 28.45 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:33:48.041 - INFO: [epoch:  1, iter:   1,170, lr:(1.000e-04,)] l_pix: 9.5271e-03  train_avg_loss: 1.0638e-02 yuv_psnr_inst : 42.08 psnr_inst : 37.20 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:35:02.780 - INFO: [epoch:  1, iter:   1,180, lr:(1.000e-04,)] l_pix: 1.3023e-02  train_avg_loss: 1.0642e-02 yuv_psnr_inst : 36.45 psnr_inst : 31.05 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:36:19.314 - INFO: [epoch:  1, iter:   1,190, lr:(1.000e-04,)] l_pix: 9.9374e-03  train_avg_loss: 1.0644e-02 yuv_psnr_inst : 39.15 psnr_inst : 34.01 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:37:34.669 - INFO: [epoch:  1, iter:   1,200, lr:(1.000e-04,)] l_pix: 1.3725e-02  train_avg_loss: 1.0655e-02 yuv_psnr_inst : 42.26 psnr_inst : 36.20 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:38:49.475 - INFO: [epoch:  1, iter:   1,210, lr:(1.000e-04,)] l_pix: 1.0418e-02  train_avg_loss: 1.0650e-02 yuv_psnr_inst : 38.28 psnr_inst : 32.27 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:40:04.678 - INFO: [epoch:  1, iter:   1,220, lr:(1.000e-04,)] l_pix: 1.2285e-02  train_avg_loss: 1.0654e-02 yuv_psnr_inst : 38.59 psnr_inst : 33.06 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:41:20.540 - INFO: [epoch:  1, iter:   1,230, lr:(1.000e-04,)] l_pix: 8.0382e-03  train_avg_loss: 1.0651e-02 yuv_psnr_inst : 43.98 psnr_inst : 38.27 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:42:35.625 - INFO: [epoch:  1, iter:   1,240, lr:(1.000e-04,)] l_pix: 8.5230e-03  train_avg_loss: 1.0649e-02 yuv_psnr_inst : 33.18 psnr_inst : 27.25 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:43:50.102 - INFO: [epoch:  1, iter:   1,250, lr:(1.000e-04,)] l_pix: 8.8340e-03  train_avg_loss: 1.0649e-02 yuv_psnr_inst : 43.51 psnr_inst : 37.93 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:45:04.636 - INFO: [epoch:  1, iter:   1,260, lr:(1.000e-04,)] l_pix: 1.0482e-02  train_avg_loss: 1.0646e-02 yuv_psnr_inst : 37.83 psnr_inst : 31.69 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:46:20.107 - INFO: [epoch:  1, iter:   1,270, lr:(1.000e-04,)] l_pix: 1.2095e-02  train_avg_loss: 1.0653e-02 yuv_psnr_inst : 39.59 psnr_inst : 33.81 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:47:34.590 - INFO: [epoch:  1, iter:   1,280, lr:(1.000e-04,)] l_pix: 1.0564e-02  train_avg_loss: 1.0653e-02 yuv_psnr_inst : 29.42 psnr_inst : 23.23 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:48:47.993 - INFO: [epoch:  1, iter:   1,290, lr:(1.000e-04,)] l_pix: 1.0185e-02  train_avg_loss: 1.0652e-02 yuv_psnr_inst : 37.17 psnr_inst : 31.49 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:50:03.226 - INFO: [epoch:  1, iter:   1,300, lr:(1.000e-04,)] l_pix: 8.3334e-03  train_avg_loss: 1.0652e-02 yuv_psnr_inst : 37.95 psnr_inst : 32.52 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:51:17.085 - INFO: [epoch:  1, iter:   1,310, lr:(1.000e-04,)] l_pix: 1.8171e-02  train_avg_loss: 1.0657e-02 yuv_psnr_inst : 24.22 psnr_inst : 17.99 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:52:31.583 - INFO: [epoch:  1, iter:   1,320, lr:(1.000e-04,)] l_pix: 9.2466e-03  train_avg_loss: 1.0654e-02 yuv_psnr_inst : 38.79 psnr_inst : 32.93 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:53:48.864 - INFO: [epoch:  1, iter:   1,330, lr:(1.000e-04,)] l_pix: 1.1841e-02  train_avg_loss: 1.0658e-02 yuv_psnr_inst : 31.26 psnr_inst : 25.14 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:55:04.502 - INFO: [epoch:  1, iter:   1,340, lr:(1.000e-04,)] l_pix: 1.0638e-02  train_avg_loss: 1.0658e-02 yuv_psnr_inst : 36.94 psnr_inst : 30.12 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:56:17.506 - INFO: [epoch:  1, iter:   1,350, lr:(1.000e-04,)] l_pix: 1.2113e-02  train_avg_loss: 1.0655e-02 yuv_psnr_inst : 36.04 psnr_inst : 30.51 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:57:30.849 - INFO: [epoch:  1, iter:   1,360, lr:(1.000e-04,)] l_pix: 8.8388e-03  train_avg_loss: 1.0648e-02 yuv_psnr_inst : 40.90 psnr_inst : 34.90 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 13:58:43.069 - INFO: [epoch:  1, iter:   1,370, lr:(1.000e-04,)] l_pix: 1.3358e-02  train_avg_loss: 1.0651e-02 yuv_psnr_inst : 37.64 psnr_inst : 32.27 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:00:01.870 - INFO: [epoch:  1, iter:   1,380, lr:(1.000e-04,)] l_pix: 9.2236e-03  train_avg_loss: 1.0652e-02 yuv_psnr_inst : 37.23 psnr_inst : 31.54 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:01:15.745 - INFO: [epoch:  1, iter:   1,390, lr:(1.000e-04,)] l_pix: 8.1827e-03  train_avg_loss: 1.0648e-02 yuv_psnr_inst : 33.60 psnr_inst : 28.03 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:02:29.555 - INFO: [epoch:  1, iter:   1,400, lr:(1.000e-04,)] l_pix: 9.3320e-03  train_avg_loss: 1.0644e-02 yuv_psnr_inst : 34.92 psnr_inst : 29.50 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:03:47.816 - INFO: [epoch:  1, iter:   1,410, lr:(1.000e-04,)] l_pix: 1.0506e-02  train_avg_loss: 1.0648e-02 yuv_psnr_inst : 44.42 psnr_inst : 37.97 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:05:00.863 - INFO: [epoch:  1, iter:   1,420, lr:(1.000e-04,)] l_pix: 9.2302e-03  train_avg_loss: 1.0643e-02 yuv_psnr_inst : 43.87 psnr_inst : 38.55 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:06:17.627 - INFO: [epoch:  1, iter:   1,430, lr:(1.000e-04,)] l_pix: 2.1968e-02  train_avg_loss: 1.0653e-02 yuv_psnr_inst : 32.15 psnr_inst : 26.60 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:07:31.282 - INFO: [epoch:  1, iter:   1,440, lr:(1.000e-04,)] l_pix: 1.2950e-02  train_avg_loss: 1.0654e-02 yuv_psnr_inst : 34.54 psnr_inst : 28.50 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:08:45.351 - INFO: [epoch:  1, iter:   1,450, lr:(1.000e-04,)] l_pix: 1.1604e-02  train_avg_loss: 1.0653e-02 yuv_psnr_inst : 41.62 psnr_inst : 36.26 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:10:01.644 - INFO: [epoch:  1, iter:   1,460, lr:(1.000e-04,)] l_pix: 1.0859e-02  train_avg_loss: 1.0657e-02 yuv_psnr_inst : 36.61 psnr_inst : 30.57 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:11:17.899 - INFO: [epoch:  1, iter:   1,470, lr:(1.000e-04,)] l_pix: 1.1085e-02  train_avg_loss: 1.0659e-02 yuv_psnr_inst : 36.69 psnr_inst : 30.81 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:12:30.414 - INFO: [epoch:  1, iter:   1,480, lr:(1.000e-04,)] l_pix: 1.6518e-02  train_avg_loss: 1.0666e-02 yuv_psnr_inst : 39.10 psnr_inst : 32.54 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:13:45.981 - INFO: [epoch:  1, iter:   1,490, lr:(1.000e-04,)] l_pix: 9.9585e-03  train_avg_loss: 1.0658e-02 yuv_psnr_inst : 32.02 psnr_inst : 25.86 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:15:02.546 - INFO: [epoch:  1, iter:   1,500, lr:(1.000e-04,)] l_pix: 1.1405e-02  train_avg_loss: 1.0659e-02 yuv_psnr_inst : 46.33 psnr_inst : 40.79 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:16:17.476 - INFO: [epoch:  1, iter:   1,510, lr:(1.000e-04,)] l_pix: 9.9885e-03  train_avg_loss: 1.0655e-02 yuv_psnr_inst : 38.64 psnr_inst : 32.71 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:17:30.605 - INFO: [epoch:  1, iter:   1,520, lr:(1.000e-04,)] l_pix: 1.2377e-02  train_avg_loss: 1.0655e-02 yuv_psnr_inst : 34.64 psnr_inst : 29.28 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:18:45.003 - INFO: [epoch:  1, iter:   1,530, lr:(1.000e-04,)] l_pix: 8.5050e-03  train_avg_loss: 1.0658e-02 yuv_psnr_inst : 42.27 psnr_inst : 36.38 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:20:00.911 - INFO: [epoch:  1, iter:   1,540, lr:(1.000e-04,)] l_pix: 9.7091e-03  train_avg_loss: 1.0658e-02 yuv_psnr_inst : 33.91 psnr_inst : 28.03 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:21:17.332 - INFO: [epoch:  1, iter:   1,550, lr:(1.000e-04,)] l_pix: 9.3086e-03  train_avg_loss: 1.0658e-02 yuv_psnr_inst : 38.45 psnr_inst : 33.10 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:22:31.515 - INFO: [epoch:  1, iter:   1,560, lr:(1.000e-04,)] l_pix: 1.2004e-02  train_avg_loss: 1.0654e-02 yuv_psnr_inst : 35.43 psnr_inst : 29.55 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:23:45.656 - INFO: [epoch:  1, iter:   1,570, lr:(1.000e-04,)] l_pix: 9.5835e-03  train_avg_loss: 1.0654e-02 yuv_psnr_inst : 38.29 psnr_inst : 32.37 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:25:00.326 - INFO: [epoch:  1, iter:   1,580, lr:(1.000e-04,)] l_pix: 7.2056e-03  train_avg_loss: 1.0656e-02 yuv_psnr_inst : 40.15 psnr_inst : 34.01 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:26:15.114 - INFO: [epoch:  1, iter:   1,590, lr:(1.000e-04,)] l_pix: 1.0657e-02  train_avg_loss: 1.0659e-02 yuv_psnr_inst : 36.08 psnr_inst : 30.94 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:27:32.302 - INFO: [epoch:  1, iter:   1,600, lr:(1.000e-04,)] l_pix: 8.2316e-03  train_avg_loss: 1.0658e-02 yuv_psnr_inst : 41.32 psnr_inst : 36.09 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:28:46.524 - INFO: [epoch:  1, iter:   1,610, lr:(1.000e-04,)] l_pix: 8.8753e-03  train_avg_loss: 1.0656e-02 yuv_psnr_inst : 31.50 psnr_inst : 25.85 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:30:02.802 - INFO: [epoch:  1, iter:   1,620, lr:(1.000e-04,)] l_pix: 1.1925e-02  train_avg_loss: 1.0662e-02 yuv_psnr_inst : 41.14 psnr_inst : 35.62 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:31:17.065 - INFO: [epoch:  1, iter:   1,630, lr:(1.000e-04,)] l_pix: 1.1629e-02  train_avg_loss: 1.0661e-02 yuv_psnr_inst : 43.38 psnr_inst : 37.92 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:32:34.969 - INFO: [epoch:  1, iter:   1,640, lr:(1.000e-04,)] l_pix: 9.5713e-03  train_avg_loss: 1.0662e-02 yuv_psnr_inst : 41.07 psnr_inst : 35.16 yuv_psnr_avg : inf psnr_avg : inf
+19-12-31 14:33:49.084 - INFO: [epoch:  1, iter:   1,650, lr:(1.000e-04,)] l_pix: 1.2004e-02  train_avg_loss: 1.0664e-02 yuv_psnr_inst : 38.88 psnr_inst : 32.89 yuv_psnr_avg : inf psnr_avg : inf
+slurmstepd: error: *** JOB 246898 ON vol03 CANCELLED AT 2019-12-31T14:34:14 ***

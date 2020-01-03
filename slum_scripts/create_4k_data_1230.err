@@ -1,0 +1,14 @@
+cudnn(28):ERROR:105: Unable to locate a modulefile for 'cudnn/7.0.4'
+19-12-30 18:29:51.677 - INFO: Data: sharp_bicubic - /lustre/home/acct-eezy/eezy/4khdr/data/Dataset/test_540p
+19-12-30 18:29:51.679 - INFO: Padding mode: new_info
+19-12-30 18:29:51.679 - INFO: Model path: /lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_30000_nobug_ssim_10_LR_1e_5_suzhou_remove_baddata/models/latest_G.pth
+19-12-30 18:29:51.679 - INFO: Save images: True
+19-12-30 18:29:51.679 - INFO: Flip test: False
+Traceback (most recent call last):
+  File "/lustre/home/acct-eezy/eezy/4khdr/codes/EDVR/test_4k_hdr_without_GT_padding_self_ensamble_1230.py", line 421, in <module>
+    main()
+  File "/lustre/home/acct-eezy/eezy/4khdr/codes/EDVR/test_4k_hdr_without_GT_padding_self_ensamble_1230.py", line 319, in main
+    output = self_ensamble_fusion(output_)
+  File "/lustre/home/acct-eezy/eezy/4khdr/codes/EDVR/test_4k_hdr_without_GT_padding_self_ensamble_1230.py", line 40, in self_ensamble_fusion
+    images_final = images_list[0].float32()
+AttributeError: 'Tensor' object has no attribute 'float32'

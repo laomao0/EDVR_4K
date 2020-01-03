@@ -1,0 +1,1 @@
+/lustre/home/acct-eezy/eezy/4khdr/naic_submit -token 91474aa2ed0eca41 -file /lustre/home/acct-eezy/eezy/4khdr/Results/test_4k_infer_rotate_self_ensamble_EDVR_self_en/test_4k_infer_rotate_self_ensamble_EDVR_self_en.zip

@@ -1,0 +1,89 @@
+#### general settings
+name: train_EDVR_L_Preload_use_hdr_as_input_cos_yuv_S
+use_tb_logger: true
+model: video_base
+distortion: sr
+scale: 4
+#gpu_ids: [0,1,2,3,4,5,6,7]
+gpu_ids: [0]
+
+#### datasets
+datasets:
+  train:
+    name: KESAI
+    mode: KESAI
+    interval_list: [1]
+    random_reverse: false
+    border_mode: false
+    dataroot_GT: /lustre/home/acct-eezy/eezy/4khdr/data/Dataset/train_4k
+    dataroot_LQ: /lustre/home/acct-eezy/eezy/4khdr/codes/HDRNet/logs/hdr_out_540p
+    data_type: img
+
+    N_frames: 5
+    use_shuffle: true
+    n_workers: 5  # per GPU
+    batch_size: 32
+    GT_size: 256  #256
+    LQ_size: 64  # 64
+    use_flip: true
+    use_rot: true
+    color: YUV
+
+  val:
+    name: REDS4
+    mode: video_test
+    stitch: false
+    dataroot_GT: /lustre/home/acct-eezy/eezy/4khdr/data/Dataset/wangshen_validate/gt
+    dataroot_LQ: /lustre/home/acct-eezy/eezy/4khdr/data/Dataset/wangshen_validate/input_LDR
+    use_all_folders : false  # use all folders for validation, otherwise use the first folder
+    cache_data: true
+    N_frames: 5
+    padding: new_info
+    color: YUV
+
+network_G:
+  which_model_G: EDVR
+  nf: 128
+  nframes: 5
+  groups: 8
+  front_RBs: 5
+  back_RBs: 10
+  predeblur: false
+  HR_in: false
+  w_TSA: true
+
+#### path
+path:
+  pretrain_model_G: #/lustre/home/acct-eezy/eezy/4khdr/codes/experiments/train_EDVR_L_Preload_30000_nobug_ssim_10_LR_1e_5_suzhou_remove_baddata/models/latest_G.pth
+  save_path : /lustre/home/acct-eezy/eezy/4khdr/codes/
+  strict_load: true
+  resume_state: ~
+
+#### training settings: learning rate scheme, loss
+# TODO
+train:
+  enable: true
+  lr_G: !!float 1e-4
+  lr_scheme: ReduceLROnPlateau #ReduceLROnPlateau 
+  beta1: 0.9
+  beta2: 0.99
+  factor: 0.2
+  patience: 1
+  epoch: 100
+  eta_min: !!float 1e-7
+
+  warmup_iter: -1  # -1: no warm up
+  pixel_criterion: cb #cb+ssim
+  pixel_weight: 1.0
+  ssim_weight: 0.01
+
+  manual_seed: 0
+  T_period: [30000, 30000, 30000, 30000]
+  restarts: [30000, 60000, 90000]
+  restart_weights: [1, 1, 1]
+  eta_min: !!float 1e-7
+
+#### logger
+logger:
+  print_freq:  10 #100
+  # save_checkpoint_freq: !!float 5000 #5e3
